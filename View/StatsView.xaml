@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="KURSOVA.View.StatsView"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+xmlns:vm="clr-namespace:KURSOVA.ViewModel"
+xmlns:model="clr-namespace:KURSOVA.Model"
+xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:loc="clr-namespace:KURSOVA.Localization"
+mc:Ignorable="d" 
+d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid Margin="0,10,0,0">
+            <Border Style="{DynamicResource CardBorder}"
+                BorderThickness="2" CornerRadius="8">
+                <TextBlock Text="{loc:Loc Stats_Placeholder}" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" 
+                       FontSize="16" 
+                       Foreground="#94A3B8"
+                       TextWrapping="Wrap"/>
+            </Border>
+        </Grid>
+   
+</UserControl>

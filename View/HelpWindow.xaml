@@ -1,0 +1,47 @@
+﻿<Window x:Class="KURSOVA.View.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Довідка по програмі" 
+        Height="427" Width="450"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BackgroundBrush}">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <Border Style="{DynamicResource CardBorder}" Margin="15">
+
+            <StackPanel>
+                <TextBlock Style="{DynamicResource HeaderText}" 
+                           Text="Довідка"/>
+
+                <TextBlock Style="{DynamicResource SubHeaderText}" 
+                           Text="Імпорт файлів" 
+                           Margin="0,15,0,5"/>
+
+                <TextBlock Style="{DynamicResource BodyText}" 
+                           TextWrapping="Wrap">
+                    1. Для додавання одного файлу натисніть 'Файл' -> 'Імпорт файлів...' і виберіть .txt файл.
+                    <LineBreak/><LineBreak/>
+                    2. Для додавання всіх файлів з папки натисніть 'Файл' -> 'Імпорт папки...' і виберіть потрібну папку.
+                </TextBlock>
+
+                <TextBlock Style="{DynamicResource SubHeaderText}" 
+                           Text="Вкладки" 
+                           Margin="0,15,0,5"/>
+
+                <TextBlock Style="{DynamicResource BodyText}" 
+                           TextWrapping="Wrap">
+                    - <Bold>Документи:</Bold> Показує список всіх завантажених документів.
+                    <LineBreak/>
+                    - <Bold>Схожі:</Bold> Дозволяє знайти документи, схожі на обраний.
+                    <LineBreak/>
+                    - <Bold>Кластери:</Bold> Групує схожі документи разом.
+                </TextBlock>
+
+            </StackPanel>
+        </Border>
+    </ScrollViewer>
+</Window>
