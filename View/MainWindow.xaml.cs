@@ -1,4 +1,6 @@
-﻿using KURSOVA.ViewModel;
+﻿using KURSOVA.Model.Classes;
+using KURSOVA.Services;
+using KURSOVA.ViewModel;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -21,7 +23,9 @@ namespace KURSOVA
         public MainWindow()
         {
             InitializeComponent();
-            MainViewModel mainViewModel = new MainViewModel();
+            IDialogService dialogService = new DialogService();
+            IThemeService themeService = new ThemeService();
+            MainViewModel mainViewModel = new MainViewModel(dialogService, themeService);
             this.DataContext = mainViewModel;
         }
 

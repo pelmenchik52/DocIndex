@@ -12,7 +12,7 @@
              d:DesignHeight="700" d:DesignWidth="300">
 
     <Border Grid.Column="0" Style="{DynamicResource CardBorder}" Margin="0,0,10,0">
-        <ScrollViewer 
+        <ScrollViewer Style="{DynamicResource ModernScrollViewer}" 
             VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <TextBlock Text="{loc:Loc Manage_Title}" 
@@ -34,7 +34,11 @@
                 <Button Command="{Binding btnImportFolder}" 
                         Content="{loc:Loc Manage_ImportFolder}" 
                         Style="{DynamicResource ModernButton}"
-                        Margin="0,0,0,20" Height="35"/>
+                        Margin="0,0,0,8" Height="35"/>
+                <Button Command="{Binding btnLoadCorpus}" 
+                        Content="{loc:Loc Manage_LoadCorpus}" 
+                        Style="{DynamicResource ModernButton}"
+                    Margin="0,0,0,20" Height="35"/>
 
                 <Separator Margin="0,0,0,20" Background="{DynamicResource BorderBrush}"/>
 
@@ -64,7 +68,7 @@
                         Content="{loc:Loc Manage_FindSimilar}" 
                         Style="{DynamicResource ModernButton}"
                         Margin="0,0,0,8" Height="35"/>
-                <Button Command="{Binding BtnClasterizationBtn}" 
+                <Button Command="{Binding BtnClasterization}" 
                         Content="{loc:Loc Manage_Clustering}" 
                         Style="{DynamicResource ModernButton}"
                         Margin="0,0,0,8" Height="35"/>
@@ -80,7 +84,8 @@
                                Foreground="{DynamicResource TextSecondaryBrush}"/>
                     <Slider x:Name="sliderClusterCount"
                             Value="{Binding ClusterCount, Mode=TwoWay}" 
-                            Minimum="2" Maximum="20" IsSnapToTickEnabled="True" TickFrequency="1"/>
+                            Minimum="2" Maximum="20" IsSnapToTickEnabled="True" TickFrequency="1"
+                            Style="{DynamicResource ThemedSliderStyle}"/>
                 </DockPanel>
 
                 <Button Command="{Binding BtnFrequencyDictionary}" 
@@ -122,12 +127,12 @@
                         <TextBlock FontSize="11" Foreground="{DynamicResource TextSecondaryBrush}" Margin="0,0,0,4">
                             <Run Text="{loc:Loc Stats_UniqueWords}"/>
                             <Run Text=" "/>
-                            <Run Text="{Binding UniqueWordCount, StringFormat={}{0}}"/>
+                           <Run Text="{Binding StatsVM.UniqueWordCount, StringFormat={}{0}}"/>
                         </TextBlock>
                         <TextBlock FontSize="11" Foreground="{DynamicResource TextSecondaryBrush}">
                             <Run Text="{loc:Loc Stats_AvgLength}"/>
                             <Run Text=" "/>
-                            <Run Text="{Binding AvgDocLength, StringFormat={}{0:F0}}"/>
+                            <Run Text="{Binding StatsVM.AvgDocLength, StringFormat={}{0:F0}}"/>
                         </TextBlock>
                     </StackPanel>
                 </Border>
@@ -143,7 +148,15 @@
                          Height="150"
                          Style="{DynamicResource ModernListBox}"
                          FontSize="10"
-                         ItemContainerStyle="{DynamicResource ListBoxItemStyle}"/>
+                         ItemContainerStyle="{DynamicResource ListBoxItemStyle}"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    </ListBox> 
             </StackPanel>
         </ScrollViewer>
     </Border>

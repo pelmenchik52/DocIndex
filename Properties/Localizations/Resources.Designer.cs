@@ -61,11 +61,137 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Інформація про тексти.
+        ///   Looks up a localized string similar to Імпорт файлів формату .txt.
+        /// </summary>
+        public static string Add_File_Description_Help {
+            get {
+                return ResourceManager.GetString("Add_File_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📄Імпортувати файли.
+        /// </summary>
+        public static string Add_File_Title_Help {
+            get {
+                return ResourceManager.GetString("Add_File_Title_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Імпортує всі .txt файли з вибраної папки.
+        /// </summary>
+        public static string Add_Folder_Description_Help {
+            get {
+                return ResourceManager.GetString("Add_Folder_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📁Імпортувати папку.
+        /// </summary>
+        public static string Add_Folder_Title_Help {
+            get {
+                return ResourceManager.GetString("Add_Folder_Title_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Виконує розподіленя документів на групки найподібніших документів. Кількість групок вибирається користувачем за допомогою повзунка &quot;Кількість кластерів&quot;.
+        /// </summary>
+        public static string Clasterization_Description_Help {
+            get {
+                return ResourceManager.GetString("Clasterization_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📊Кластеризація.
+        /// </summary>
+        public static string Clasterization_Title_Help {
+            get {
+                return ResourceManager.GetString("Clasterization_Title_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Очищає весь вміст зі всіх полів та вкладок, який був отриманий при роботі з документами.
+        /// </summary>
+        public static string Clear_Description_Help {
+            get {
+                return ResourceManager.GetString("Clear_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🗑️Очистити.
+        /// </summary>
+        public static string Clear_Title_Help {
+            get {
+                return ResourceManager.GetString("Clear_Title_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Кількість кластерів більша ніж кількість документів у корпусі.
+        /// </summary>
+        public static string Clustering_Error_KTooLarge {
+            get {
+                return ResourceManager.GetString("Clustering_Error_KTooLarge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Помилка кластеризації.
+        /// </summary>
+        public static string Clustering_Error_Title {
+            get {
+                return ResourceManager.GetString("Clustering_Error_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Не вдалося здійснити кластеризацію.
+        /// </summary>
+        public static string Clustering_Status_ValidationFailed {
+            get {
+                return ResourceManager.GetString("Clustering_Status_ValidationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Групує схожі документи разом в кластери. Кількість груп документів залежить від того, скільки кластерів користувач вибрав..
+        /// </summary>
+        public static string Clusters_Description_Help {
+            get {
+                return ResourceManager.GetString("Clusters_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Кластеризація - це поділ стосу документів на групки, які мають якусь спільну тему або порсто схожі між собою.
         /// </summary>
         public static string Clusters_InfoText {
             get {
                 return ResourceManager.GetString("Clusters_InfoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📊Кластери:.
+        /// </summary>
+        public static string Clusters_Subtitle_Help {
+            get {
+                return ResourceManager.GetString("Clusters_Subtitle_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Кількість.
+        /// </summary>
+        public static string CountOfWordsFreq {
+            get {
+                return ResourceManager.GetString("CountOfWordsFreq", resourceCulture);
             }
         }
         
@@ -79,7 +205,7 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Редагувати документ.
+        ///   Looks up a localized string similar to 📝Редагувати документ.
         /// </summary>
         public static string Docs_Edit {
             get {
@@ -93,6 +219,240 @@ namespace KURSOVA.Properties.Localizations {
         public static string Docs_Search {
             get {
                 return ResourceManager.GetString("Docs_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Показує список всіх завантажених документів..
+        /// </summary>
+        public static string Document_Description_Help {
+            get {
+                return ResourceManager.GetString("Document_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📄Документи:.
+        /// </summary>
+        public static string Document_Subtitle_Help {
+            get {
+                return ResourceManager.GetString("Document_Subtitle_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Перетягніть сюди файли або імпортуйте їх на вкладці меню &quot;Імпортувати&quot;, щоб почати з ними працювати.
+        /// </summary>
+        public static string dragNDropText {
+            get {
+                return ResourceManager.GetString("dragNDropText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редагування.
+        /// </summary>
+        public static string Edit_Title {
+            get {
+                return ResourceManager.GetString("Edit_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Знаходить схожі документи до обраного.
+        /// </summary>
+        public static string Find_Similar_Description_Help {
+            get {
+                return ResourceManager.GetString("Find_Similar_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🔍Знайти схожі.
+        /// </summary>
+        public static string Find_Similar_Title_Help {
+            get {
+                return ResourceManager.GetString("Find_Similar_Title_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Слово.
+        /// </summary>
+        public static string FindingWordFreq {
+            get {
+                return ResourceManager.GetString("FindingWordFreq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Словник, який показує слово і наскільки часто воно зустрічається.
+        /// </summary>
+        public static string FreqDictionary_Description_Help {
+            get {
+                return ResourceManager.GetString("FreqDictionary_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📖Словник частот.
+        /// </summary>
+        public static string FreqDictionary_Title_Help {
+            get {
+                return ResourceManager.GetString("FreqDictionary_Title_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Словник частот.
+        /// </summary>
+        public static string Frequency_Title {
+            get {
+                return ResourceManager.GetString("Frequency_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Скасувати.
+        /// </summary>
+        public static string General_Cancel {
+            get {
+                return ResourceManager.GetString("General_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💾Зберегти.
+        /// </summary>
+        public static string General_Save {
+            get {
+                return ResourceManager.GetString("General_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Імпорт файлів.
+        /// </summary>
+        public static string Import_Files_Info_Help {
+            get {
+                return ResourceManager.GetString("Import_Files_Info_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Імпорт .
+        /// </summary>
+        public static string Import_Title_Help {
+            get {
+                return ResourceManager.GetString("Import_Title_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Для роботи кнопок &quot;📊Кластеризація&quot; ,&quot;🔍Знайти схожі&quot; та &quot;📖Словник частот&quot; потрібно натиснути на кнопку &quot;Побудувати індекс&quot; в іншому випадку кнопки будуть неактивними. Також для роботи кнопки &quot;🔍Знайти схожі&quot; потрібно вибрати документ..
+        /// </summary>
+        public static string Important_Description_Help {
+            get {
+                return ResourceManager.GetString("Important_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Важливо!.
+        /// </summary>
+        public static string Important_Title_Help {
+            get {
+                return ResourceManager.GetString("Important_Title_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Виводить на вкладку &quot;🔑Ключові слова&quot;  слова, їхні TF-IDF очки та скільки слів зустрічаєтсья в документах.
+        /// </summary>
+        public static string Indexation_Description_Help {
+            get {
+                return ResourceManager.GetString("Indexation_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Побудувати індекс.
+        /// </summary>
+        public static string Indexation_Title_Help {
+            get {
+                return ResourceManager.GetString("Indexation_Title_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Будується....
+        /// </summary>
+        public static string IndexStatus_Building {
+            get {
+                return ResourceManager.GetString("IndexStatus_Building", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Індекс побудовано.
+        /// </summary>
+        public static string IndexStatus_Built {
+            get {
+                return ResourceManager.GetString("IndexStatus_Built", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index is not build.
+        /// </summary>
+        public static string IndexStatus_NotBuilt {
+            get {
+                return ResourceManager.GetString("IndexStatus_NotBuilt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Довідка.
+        /// </summary>
+        public static string Info_Header_Text_Help {
+            get {
+                return ResourceManager.GetString("Info_Header_Text_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Інформація.
+        /// </summary>
+        public static string Information_Title {
+            get {
+                return ResourceManager.GetString("Information_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  1. Для додавання одного файлу натисніть &apos;📄Імпортувати файли&quot; і виберіть .txt файл у вибраній директорії..
+        /// </summary>
+        public static string Instrution_To_Add_File {
+            get {
+                return ResourceManager.GetString("Instrution_To_Add_File", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2. Для додавання всіх файлів з папки натисніть &quot;📁Імпортувати папку&quot; і виберіть потрібну папку з txt файлами..
+        /// </summary>
+        public static string Instrution_To_Add_Folder {
+            get {
+                return ResourceManager.GetString("Instrution_To_Add_Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Таблиця, яка показує слова,  очки TF-IDF (наскільки вагоме слово) та їхню частоту (як часто вони зустрічаються в усіх документах. Також цю таблицю можна експортувати у вигляді таблиці, використовуючи кнопку &quot;Експортувати&quot;.
+        /// </summary>
+        public static string Keywords_Description_Help {
+            get {
+                return ResourceManager.GetString("Keywords_Description_Help", resourceCulture);
             }
         }
         
@@ -133,6 +493,33 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Не знайдено ключових слів. Можливо, корпус порожній..
+        /// </summary>
+        public static string Keywords_Info_Empty {
+            get {
+                return ResourceManager.GetString("Keywords_Info_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Найвагоміше слово: &quot;{0}&quot; | Унікальних слів: {1} | Всього оброблено слів: {2}.
+        /// </summary>
+        public static string Keywords_Info_Stats {
+            get {
+                return ResourceManager.GetString("Keywords_Info_Stats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🔑Ключові слова:.
+        /// </summary>
+        public static string Keywords_Subtitle_Help {
+            get {
+                return ResourceManager.GetString("Keywords_Subtitle_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Інформація.
         /// </summary>
         public static string Keywords_TfIdfInfo {
@@ -147,6 +534,24 @@ namespace KURSOVA.Properties.Localizations {
         public static string Keywords_TfIdfTitle {
             get {
                 return ResourceManager.GetString("Keywords_TfIdfTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Завантажує корпус документів з файлу JSON.
+        /// </summary>
+        public static string Load_Corpus_Description_Help {
+            get {
+                return ResourceManager.GetString("Load_Corpus_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📑Завантажити корпус.
+        /// </summary>
+        public static string Load_Corpus_Title_Help {
+            get {
+                return ResourceManager.GetString("Load_Corpus_Title_Help", resourceCulture);
             }
         }
         
@@ -169,7 +574,7 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Очистити.
+        ///   Looks up a localized string similar to 🗑️Очистити.
         /// </summary>
         public static string Manage_ClearAll {
             get {
@@ -178,7 +583,7 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Кількість документів:.
+        ///   Looks up a localized string similar to Кількість кластерів:.
         /// </summary>
         public static string Manage_ClusterCount {
             get {
@@ -250,6 +655,15 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 📑Завантажити корпус.
+        /// </summary>
+        public static string Manage_LoadCorpus {
+            get {
+                return ResourceManager.GetString("Manage_LoadCorpus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Журнал подій.
         /// </summary>
         public static string Manage_LogTitle {
@@ -259,7 +673,7 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Зберегти.
+        ///   Looks up a localized string similar to 💾Зберегти.
         /// </summary>
         public static string Manage_Save {
             get {
@@ -277,11 +691,20 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ☰ Меню.
+        ///   Looks up a localized string similar to ☰Меню.
         /// </summary>
         public static string Manage_Title {
             get {
                 return ResourceManager.GetString("Manage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Меню (аналіз).
+        /// </summary>
+        public static string Menu_Analize_Help {
+            get {
+                return ResourceManager.GetString("Menu_Analize_Help", resourceCulture);
             }
         }
         
@@ -331,11 +754,65 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ⚙️Налаштування.
+        ///   Looks up a localized string similar to Меню (інші кнопки).
+        /// </summary>
+        public static string Menu_Other_Help {
+            get {
+                return ResourceManager.GetString("Menu_Other_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ⚙️ Налаштування.
         /// </summary>
         public static string Menu_Settings {
             get {
                 return ResourceManager.GetString("Menu_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Меню (імпорт).
+        /// </summary>
+        public static string Menu_Title_Import_Help {
+            get {
+                return ResourceManager.GetString("Menu_Title_Import_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Меню (індексація).
+        /// </summary>
+        public static string Menu_Title_Indexation_Help {
+            get {
+                return ResourceManager.GetString("Menu_Title_Indexation_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Чи впевнені ви що хочете змінити мову? .
+        /// </summary>
+        public static string RestartRequiredMessage {
+            get {
+                return ResourceManager.GetString("RestartRequiredMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Зберігає корпус документів у JSON файл, який в подальшому можна відкрити потім.
+        /// </summary>
+        public static string Save_Button_Description_Help {
+            get {
+                return ResourceManager.GetString("Save_Button_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💾Зберегти.
+        /// </summary>
+        public static string Save_Button_Title_Help {
+            get {
+                return ResourceManager.GetString("Save_Button_Title_Help", resourceCulture);
             }
         }
         
@@ -376,11 +853,101 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Інформація про документи.
+        ///   Looks up a localized string similar to   .
+        /// </summary>
+        public static string Settings_Theme_Dark {
+            get {
+                return ResourceManager.GetString("Settings_Theme_Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to   .
+        /// </summary>
+        public static string Settings_Theme_Light {
+            get {
+                return ResourceManager.GetString("Settings_Theme_Light", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дозволяє знайти документи, схожі на обраний..
+        /// </summary>
+        public static string Similar_Description_Help {
+            get {
+                return ResourceManager.GetString("Similar_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ДЛЯ ПОЧАТКУ НЕОБХІДНО ПОБУДУВАТИ ІНДЕКС (КНОПКА &quot;ПОБУДУВАТИ ІНДЕКС&quot;) І ВИБРАТИ НЕОБХІДНИЙ ДОКУМЕНТ.
+        /// </summary>
+        public static string Similar_IndexRequired {
+            get {
+                return ResourceManager.GetString("Similar_IndexRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ДЛЯ ПОЧАТКУ НЕОБХІДНО ПОБУДУВАТИ ІНДЕКС (КНОПКА &quot;ПОБУДУВАТИ ІНДЕКС&quot;) .
+        /// </summary>
+        public static string Similar_IndexRequiredClustering {
+            get {
+                return ResourceManager.GetString("Similar_IndexRequiredClustering", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Відсоток схожості документів між собою за змістом.
         /// </summary>
         public static string Similar_InfoText {
             get {
                 return ResourceManager.GetString("Similar_InfoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🔗Подібні:.
+        /// </summary>
+        public static string Similar_Subtitle_Help {
+            get {
+                return ResourceManager.GetString("Similar_Subtitle_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Не знайдено схожих документів!.
+        /// </summary>
+        public static string SimilarDocumentNotFound_Text {
+            get {
+                return ResourceManager.GetString("SimilarDocumentNotFound_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вкладка, яка показує основну статистику та &quot;рекорди&quot;.
+        /// </summary>
+        public static string Statistic_Description_Help {
+            get {
+                return ResourceManager.GetString("Statistic_Description_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📊Статистика:.
+        /// </summary>
+        public static string Statistic_Subtitle_Help {
+            get {
+                return ResourceManager.GetString("Statistic_Subtitle_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Детальний аналіз.
+        /// </summary>
+        public static string Stats_AnalysisTitle {
+            get {
+                return ResourceManager.GetString("Stats_AnalysisTitle", resourceCulture);
             }
         }
         
@@ -394,11 +961,92 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Середня довжина слів.
+        /// </summary>
+        public static string Stats_AvgWordLength {
+            get {
+                return ResourceManager.GetString("Stats_AvgWordLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Кількість документів:.
         /// </summary>
         public static string Stats_DocsCount {
             get {
                 return ResourceManager.GetString("Stats_DocsCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Статистика документів.
+        /// </summary>
+        public static string Stats_DocStatsTitle {
+            get {
+                return ResourceManager.GetString("Stats_DocStatsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Загальні дані.
+        /// </summary>
+        public static string Stats_GeneralTitle {
+            get {
+                return ResourceManager.GetString("Stats_GeneralTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Хапакс легомена.
+        /// </summary>
+        public static string Stats_Hapax {
+            get {
+                return ResourceManager.GetString("Stats_Hapax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Мовне багатство.
+        /// </summary>
+        public static string Stats_LexicalRichness {
+            get {
+                return ResourceManager.GetString("Stats_LexicalRichness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Найдовший документ.
+        /// </summary>
+        public static string Stats_LongestDoc {
+            get {
+                return ResourceManager.GetString("Stats_LongestDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Найдовше слово.
+        /// </summary>
+        public static string Stats_LongestWord {
+            get {
+                return ResourceManager.GetString("Stats_LongestWord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Найкоротший документ.
+        /// </summary>
+        public static string Stats_ShortestDoc {
+            get {
+                return ResourceManager.GetString("Stats_ShortestDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Всього слів.
+        /// </summary>
+        public static string Stats_TotalWords {
+            get {
+                return ResourceManager.GetString("Stats_TotalWords", resourceCulture);
             }
         }
         
@@ -421,6 +1069,15 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Статистика слів.
+        /// </summary>
+        public static string Stats_WordStatsTitle {
+            get {
+                return ResourceManager.GetString("Stats_WordStatsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 📊Кластери.
         /// </summary>
         public static string Tab_Clusters {
@@ -439,7 +1096,7 @@ namespace KURSOVA.Properties.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 🔑Ключові слова.
+        ///   Looks up a localized string similar to 🔑Ключові слова:.
         /// </summary>
         public static string Tab_Keywords {
             get {
@@ -462,6 +1119,15 @@ namespace KURSOVA.Properties.Localizations {
         public static string Tab_Stats {
             get {
                 return ResourceManager.GetString("Tab_Stats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вкладки.
+        /// </summary>
+        public static string Tabs_Title_Help {
+            get {
+                return ResourceManager.GetString("Tabs_Title_Help", resourceCulture);
             }
         }
         

@@ -3,43 +3,133 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d"
-        Title="Довідка по програмі" 
-        Height="427" Width="450"
+        xmlns:viewmodel="clr-namespace:KURSOVA.Model"
+        xmlns:loc="clr-namespace:KURSOVA.Localization"
+        Title="Довідка по програмі"
+        Height="Auto" Width="450"
         WindowStartupLocation="CenterScreen"
         Background="{DynamicResource BackgroundBrush}">
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <ScrollViewer Style="{DynamicResource ModernScrollViewer}" VerticalScrollBarVisibility="Auto">
 
-        <Border Style="{DynamicResource CardBorder}" Margin="15">
+        <Border Style="{DynamicResource CardBorder}" Margin="15" Height="1175">
 
             <StackPanel>
-                <TextBlock Style="{DynamicResource HeaderText}" 
-                           Text="Довідка"/>
+                <TextBlock Style="{DynamicResource HeaderText}"
+                           Text="{loc:Loc Info_Header_Text_Help}"/>
 
-                <TextBlock Style="{DynamicResource SubHeaderText}" 
-                           Text="Імпорт файлів" 
+                <TextBlock Style="{DynamicResource SubHeaderText}"
+                           Text="{loc:Loc Important_Title_Help}"
                            Margin="0,15,0,5"/>
-
-                <TextBlock Style="{DynamicResource BodyText}" 
+                <TextBlock Style="{DynamicResource BodyText}"
                            TextWrapping="Wrap">
-                    1. Для додавання одного файлу натисніть 'Файл' -> 'Імпорт файлів...' і виберіть .txt файл.
-                    <LineBreak/><LineBreak/>
-                    2. Для додавання всіх файлів з папки натисніть 'Файл' -> 'Імпорт папки...' і виберіть потрібну папку.
+                    <Run Text="{loc:Loc Important_Description_Help}"/>
+                  
                 </TextBlock>
 
-                <TextBlock Style="{DynamicResource SubHeaderText}" 
-                           Text="Вкладки" 
+
+
+
+
+                <TextBlock Style="{DynamicResource SubHeaderText}"
+                           Text="{loc:Loc Tabs_Title_Help}"
                            Margin="0,15,0,5"/>
 
-                <TextBlock Style="{DynamicResource BodyText}" 
+                <TextBlock Style="{DynamicResource BodyText}"
                            TextWrapping="Wrap">
-                    - <Bold>Документи:</Bold> Показує список всіх завантажених документів.
+                    - <Bold>
+                        <Run Text="{loc:Loc Document_Subtitle_Help}"/>
+                    </Bold>
+                    <Run Text="{loc:Loc Document_Description_Help}"/>
                     <LineBreak/>
-                    - <Bold>Схожі:</Bold> Дозволяє знайти документи, схожі на обраний.
+                    - <Bold>
+                        <Run Text="{loc:Loc Similar_Subtitle_Help}"/>
+                    </Bold>
+                    <Run Text="{loc:Loc Similar_Description_Help}"/>
                     <LineBreak/>
-                    - <Bold>Кластери:</Bold> Групує схожі документи разом.
+                    - <Bold>
+                        <Run Text="{loc:Loc Clusters_Subtitle_Help}"/>
+                    </Bold>
+                    <Run Text="{loc:Loc Clusters_Description_Help}"/>
+                    <LineBreak/>    
+                    - <Bold>
+                        <Run Text="{loc:Loc Keywords_Subtitle_Help}"/>
+                    </Bold>
+                    <Run Text="{loc:Loc Keywords_Description_Help}"/>
+                    <LineBreak/>                                       
+                    - <Bold>
+                        <Run Text="{loc:Loc Statistic_Subtitle_Help}"/>
+                    </Bold>
+                    <Run Text="{loc:Loc Statistic_Description_Help}"/>
                 </TextBlock>
+                <TextBlock Style="{DynamicResource SubHeaderText}"
+                    Text="{loc:Loc Menu_Title_Import_Help}"/>
+                <TextBlock Style="{DynamicResource BodyText}"
+                         TextWrapping="Wrap">
+                    -<Bold>
+                        <Run Text="{loc:Loc Add_File_Title_Help}"/>: 
+                    </Bold>
+                        
+                    <Run Text="{loc:Loc Add_File_Description_Help}"/>
+                    <LineBreak/>
+                    -<Bold>
+                        <Run Text="{loc:Loc Add_Folder_Title_Help}"/>: 
+                    </Bold>  
+                    <Run Text="{loc:Loc Add_Folder_Description_Help}"/>
+                    <LineBreak/>
+                     -<Bold>
+                         <Run Text="{loc:Loc Load_Corpus_Title_Help}"/>: 
+                     </Bold>
+                     <Run Text="{loc:Loc Load_Corpus_Description_Help}"/>
+                     <LineBreak/>
+
+                </TextBlock>
+                <TextBlock Style="{DynamicResource SubHeaderText}"
+                    Text="{loc:Loc Menu_Title_Indexation_Help}"/>
+                <TextBlock Height="64"
+                           Style="{DynamicResource BodyText}">
+                     -<Bold>
+                         <Run Text="{loc:Loc Indexation_Title_Help}"/>: 
+                     </Bold>
+                     <Run Text="{loc:Loc Indexation_Description_Help}"/>
+                     <LineBreak/>
+                </TextBlock>
+                
+                <TextBlock Style="{DynamicResource SubHeaderText}"
+                        Text="{loc:Loc Menu_Analize_Help}"/>
+                <TextBlock Height="183"
+                       Style="{DynamicResource BodyText}">
+                     -<Bold>
+                         <Run Text="{loc:Loc Find_Similar_Title_Help}"/>: 
+                     </Bold>
+                     <Run Text="{loc:Loc Find_Similar_Description_Help}"/>
+                     <LineBreak/>
+                    -<Bold>
+                        <Run Text="{loc:Loc Clasterization_Title_Help}"/>: 
+                    </Bold>
+                    <Run Text="{loc:Loc Clasterization_Description_Help}"/>
+                    <LineBreak/>
+                     -<Bold>
+                         <Run Text="{loc:Loc FreqDictionary_Title_Help}"/>: 
+                     </Bold>
+                     <Run Text="{loc:Loc FreqDictionary_Description_Help}"/>
+                    <LineBreak/>
+                </TextBlock>
+                <TextBlock Style="{DynamicResource SubHeaderText}"
+                    Text="{loc:Loc Menu_Other_Help}"/>
+                <TextBlock Height="183"
+               Style="{DynamicResource BodyText}">
+                     -<Bold>
+                         <Run Text="{loc:Loc Save_Button_Title_Help}"/>: 
+                     </Bold>
+                     <Run Text="{loc:Loc Save_Button_Description_Help}"/>
+                     <LineBreak/>
+                    -<Bold>
+                        <Run Text="{loc:Loc Clear_Title_Help}"/>: 
+                    </Bold>
+                    <Run Text="{loc:Loc Clear_Description_Help}"/>
+                </TextBlock>
+
 
             </StackPanel>
         </Border>

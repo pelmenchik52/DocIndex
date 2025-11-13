@@ -1,0 +1,83 @@
+﻿<Window x:Class="KURSOVA.View.FrequencyView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:KURSOVA.ViewModel"
+        xmlns:loc="clr-namespace:KURSOVA.Localization"
+        mc:Ignorable="d"
+        Title="{loc:Loc Frequency_Title}" Height="600" Width="400"
+        d:DataContext="{d:DesignInstance Type=vm:FrequencyViewModel}"
+        
+      
+        Background="{DynamicResource BackgroundBrush}"
+        Foreground="{DynamicResource TextPrimaryBrush}">
+
+<Grid Margin="10">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <TextBox Grid.Row="0" Margin="0,0,0,10"
+                 Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{DynamicResource ModernTextBox}"/>
+
+    <ListView Grid.Row="1" 
+                  ItemsSource="{Binding FrequencyListView}"
+                   
+                  AlternationCount="2"
+                  
+                  Background="{DynamicResource BackgroundBrush}"
+                  Foreground="{DynamicResource TextPrimaryBrush}">
+
+    <ListView.ItemContainerStyle>
+        <Style TargetType="ListViewItem">
+            <Setter Property="Background" 
+                            Value="{DynamicResource BackgroundBrush}"/>
+
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" 
+                                    Value="{DynamicResource ContentBackgroundBrush}"/>
+                </Trigger>
+
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" 
+                                    Value="{DynamicResource PrimaryBrush}"/>
+                    <Setter Property="Foreground" 
+                                    Value="{DynamicResource TextOnPrimaryBrush}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </ListView.ItemContainerStyle>
+
+    <ListView.View>
+        <GridView>
+            <GridViewColumn Header="{loc:Loc FindingWordFreq}" 
+                                    DisplayMemberBinding="{Binding Word}" 
+                                    Width="180"/>
+            <GridViewColumn Header="{loc:Loc CountOfWordsFreq}" 
+                                    DisplayMemberBinding="{Binding Count}" 
+                                    Width="100"/>
+        </GridView>
+    </ListView.View>
+    </ListView>
+
+    <StackPanel Grid.Row="2" Orientation="Horizontal" 
+                    HorizontalAlignment="Right" Margin="0,10,0,0">
+
+        <Button Content="Експортувати" 
+                    Command="{Binding BtnExport}"
+                    Style="{DynamicResource SecondaryButton}" 
+                    Margin="0,0,10,0" Height="30" Width="100"/>
+
+        <Button Content="OK" 
+                    Command="{Binding BtnOK}"
+                    IsDefault="True" 
+                    Style="{DynamicResource ModernButton}" 
+                    Height="30" Width="80"/>
+    </StackPanel>
+</Grid>
+</Window>

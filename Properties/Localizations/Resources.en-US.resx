@@ -117,125 +117,143 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Manage_LoadCorpus" xml:space="preserve">
+    <value>📑Load corpus</value>
+  </data>
   <data name="Clusters_InfoText" xml:space="preserve">
-    <value />
+    <value>Clustering is the division of a stack of documents into groups that have some common theme or are similar to each other.</value>
+  </data>
+  <data name="CountOfWordsFreq" xml:space="preserve">
+    <value>Count</value>
   </data>
   <data name="Docs_Delete" xml:space="preserve">
-    <value />
+    <value>❌Delete document</value>
   </data>
   <data name="Docs_Edit" xml:space="preserve">
-    <value />
+    <value>📝Change document</value>
   </data>
   <data name="Docs_Search" xml:space="preserve">
-    <value />
+    <value>🔍Find document</value>
+  </data>
+  <data name="FindingWordFreq" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="Frequency_Title" xml:space="preserve">
+    <value>Dictionary of frequencies</value>
   </data>
   <data name="Keywords_ExportCsv" xml:space="preserve">
-    <value />
+    <value>Export</value>
   </data>
   <data name="Keywords_Header_Freq" xml:space="preserve">
-    <value />
+    <value>Word frequency</value>
   </data>
   <data name="Keywords_Header_Score" xml:space="preserve">
-    <value />
+    <value>Score</value>
   </data>
   <data name="Keywords_Header_Word" xml:space="preserve">
-    <value />
+    <value>Keywords</value>
+  </data>
+  <data name="Keywords_Info_Empty" xml:space="preserve">
+    <value>No keywords found. The corpus may be empty.</value>
+  </data>
+  <data name="Keywords_Info_Stats" xml:space="preserve">
+    <value>Most important word: "{0}" | Unique words: {1} | Total words processed: {2}</value>
   </data>
   <data name="Keywords_TfIdfInfo" xml:space="preserve">
-    <value />
+    <value>Information</value>
   </data>
   <data name="Keywords_TfIdfTitle" xml:space="preserve">
-    <value />
+    <value>💡TF-IDF analysis</value>
   </data>
   <data name="Manage_AnalysisSection" xml:space="preserve">
-    <value />
+    <value>Analysis</value>
   </data>
   <data name="Manage_BuildIndex" xml:space="preserve">
-    <value />
+    <value>Build index</value>
   </data>
   <data name="Manage_ClearAll" xml:space="preserve">
-    <value />
+    <value>🗑️Clear</value>
   </data>
   <data name="Manage_ClusterCount" xml:space="preserve">
-    <value />
+    <value>Count of clusters:</value>
   </data>
   <data name="Manage_Clustering" xml:space="preserve">
-    <value />
+    <value>📊Clasterization</value>
   </data>
   <data name="Manage_FindSimilar" xml:space="preserve">
-    <value />
+    <value>🔍Find similar</value>
   </data>
   <data name="Manage_FreqDict" xml:space="preserve">
-    <value />
+    <value>📖Frequency dictionary</value>
   </data>
   <data name="Manage_ImportFiles" xml:space="preserve">
-    <value />
+    <value>📄Import files</value>
   </data>
   <data name="Manage_ImportFolder" xml:space="preserve">
-    <value />
+    <value>📁Import folder</value>
   </data>
   <data name="Manage_ImportSection" xml:space="preserve">
-    <value />
+    <value>Import</value>
   </data>
   <data name="Manage_IndexingSection" xml:space="preserve">
-    <value />
+    <value>Indexation</value>
   </data>
   <data name="Manage_LogTitle" xml:space="preserve">
-    <value />
+    <value>Event log</value>
   </data>
   <data name="Manage_Save" xml:space="preserve">
-    <value />
+    <value>💾Save</value>
   </data>
   <data name="Manage_StatsSection" xml:space="preserve">
-    <value />
+    <value>Statistic</value>
   </data>
   <data name="Manage_Title" xml:space="preserve">
-    <value />
+    <value>☰Menu</value>
   </data>
   <data name="Menu_File" xml:space="preserve">
-    <value />
+    <value>📄File</value>
   </data>
   <data name="Menu_File_Exit" xml:space="preserve">
-    <value />
+    <value>❌Exit</value>
   </data>
   <data name="Menu_File_Save" xml:space="preserve">
-    <value />
+    <value>💾Save</value>
   </data>
   <data name="Menu_Help" xml:space="preserve">
-    <value />
+    <value>❓Help</value>
   </data>
   <data name="Menu_Help_Show" xml:space="preserve">
-    <value />
+    <value>User manual</value>
   </data>
   <data name="Menu_Settings" xml:space="preserve">
-    <value />
+    <value>⚙️Settings</value>
   </data>
   <data name="Settings_Apply" xml:space="preserve">
-    <value />
+    <value>Apply</value>
   </data>
   <data name="Settings_Cancel" xml:space="preserve">
-    <value />
+    <value>Cancel</value>
   </data>
   <data name="Settings_Language" xml:space="preserve">
-    <value />
+    <value>🌐Language</value>
   </data>
   <data name="Settings_Theme" xml:space="preserve">
-    <value />
+    <value>🖌️Theme</value>
   </data>
   <data name="Similar_InfoText" xml:space="preserve">
-    <value />
+    <value>Percentage of similarity between documents in content</value>
   </data>
   <data name="Stats_AvgLength" xml:space="preserve">
-    <value />
+    <value>Average length</value>
   </data>
   <data name="Stats_DocsCount" xml:space="preserve">
-    <value />
+    <value>Count of documents:</value>
   </data>
   <data name="Stats_UniqueWords" xml:space="preserve">
-    <value />
+    <value>Unique words</value>
   </data>
   <data name="Stats_WordCount" xml:space="preserve">
-    <value />
+    <value>Count of words</value>
   </data>
   <data name="Tab_Clusters" xml:space="preserve">
     <value>📊Clusters</value>
@@ -257,5 +275,209 @@
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Docergänger</value>
+  </data>
+  <data name="Stats_TotalWords" xml:space="preserve">
+    <value>Total words</value>
+  </data>
+  <data name="Stats_GeneralTitle" xml:space="preserve">
+    <value>General info</value>
+  </data>
+  <data name="Stats_DocStatsTitle" xml:space="preserve">
+    <value>Documents statistic</value>
+  </data>
+  <data name="Stats_LongestDoc" xml:space="preserve">
+    <value>Longest document</value>
+  </data>
+  <data name="Stats_ShortestDoc" xml:space="preserve">
+    <value>Shortest document</value>
+  </data>
+  <data name="Stats_AnalysisTitle" xml:space="preserve">
+    <value>Detail analysis</value>
+  </data>
+  <data name="Stats_LexicalRichness" xml:space="preserve">
+    <value>Linguistic diversity</value>
+  </data>
+  <data name="Stats_Hapax" xml:space="preserve">
+    <value>Hapax legomenon</value>
+  </data>
+  <data name="Stats_WordStatsTitle" xml:space="preserve">
+    <value>Words statistic</value>
+  </data>
+  <data name="Stats_AvgWordLength" xml:space="preserve">
+    <value>Average word length</value>
+  </data>
+  <data name="Stats_LongestWord" xml:space="preserve">
+    <value>Longest word</value>
+  </data>
+  <data name="General_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="General_Save" xml:space="preserve">
+    <value>💾Save</value>
+  </data>
+  <data name="Edit_Title" xml:space="preserve">
+    <value>Editing</value>
+  </data>
+  <data name="RestartRequiredMessage" xml:space="preserve">
+    <value>Are you sure you want to change the language?</value>
+  </data>
+  <data name="Settings_Theme_Light" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Settings_Theme_Dark" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dragNDropText" xml:space="preserve">
+    <value>Drag and drop files here or import them from the Import menu tab to start working with them</value>
+  </data>
+  <data name="Info_Header_Text_Help" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Import_Files_Info_Help" xml:space="preserve">
+    <value>Files import</value>
+  </data>
+  <data name="Instrution_To_Add_File" xml:space="preserve">
+    <value>1. To add a single file, click '📄Import files' and select a .txt file in the selected directory.</value>
+  </data>
+  <data name="Instrution_To_Add_Folder" xml:space="preserve">
+    <value>2. To add all files from a folder, click "📁Import folder" and select the desired folder with txt files.</value>
+  </data>
+  <data name="Document_Subtitle_Help" xml:space="preserve">
+    <value>Documents:</value>
+  </data>
+  <data name="Document_Description_Help" xml:space="preserve">
+    <value>Shows a list of all uploaded documents.</value>
+  </data>
+  <data name="Similar_Subtitle_Help" xml:space="preserve">
+    <value>🔗Similar:</value>
+  </data>
+  <data name="Similar_Description_Help" xml:space="preserve">
+    <value>Allows you to find documents similar to the selected one.</value>
+  </data>
+  <data name="Clusters_Subtitle_Help" xml:space="preserve">
+    <value>Clusters:</value>
+  </data>
+  <data name="Clusters_Description_Help" xml:space="preserve">
+    <value>Groups similar documents together to clusters. The number of document groups depends on how many clusters the user has selected.</value>
+  </data>
+  <data name="Tabs_Title_Help" xml:space="preserve">
+    <value>Tabs</value>
+  </data>
+  <data name="Keywords_Subtitle_Help" xml:space="preserve">
+    <value>🔑Keywords</value>
+  </data>
+  <data name="Keywords_Description_Help" xml:space="preserve">
+    <value>A table showing words, their TF-IDF scores (how important a word is), and their frequency (how often they occur in all documents). You can also export this table as a table using the "Export" button.</value>
+  </data>
+  <data name="Statistic_Subtitle_Help" xml:space="preserve">
+    <value>📊Statistic</value>
+  </data>
+  <data name="Statistic_Description_Help" xml:space="preserve">
+    <value>Tab that shows basic statistics and "records"</value>
+  </data>
+  <data name="Menu_Title_Import_Help" xml:space="preserve">
+    <value>Menu (import)</value>
+  </data>
+  <data name="Add_File_Title_Help" xml:space="preserve">
+    <value>📄Import files</value>
+  </data>
+  <data name="Add_File_Description_Help" xml:space="preserve">
+    <value>Importing .txt files</value>
+  </data>
+  <data name="Add_Folder_Title_Help" xml:space="preserve">
+    <value>📁Import folder</value>
+  </data>
+  <data name="Add_Folder_Description_Help" xml:space="preserve">
+    <value>Imports all .txt files from the selected folder</value>
+  </data>
+  <data name="Load_Corpus_Title_Help" xml:space="preserve">
+    <value>📑Import corpus</value>
+  </data>
+  <data name="Load_Corpus_Description_Help" xml:space="preserve">
+    <value>Завантажує корпус документів з файлу JSON</value>
+  </data>
+  <data name="Import_Title_Help" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="Menu_Title_Indexation_Help" xml:space="preserve">
+    <value>Menu (indexation)</value>
+  </data>
+  <data name="Indexation_Title_Help" xml:space="preserve">
+    <value>Build index</value>
+  </data>
+  <data name="Indexation_Description_Help" xml:space="preserve">
+    <value>Displays words, their TF-IDF scores and how many words occur in documents on the "🔑Keywords" tab</value>
+  </data>
+  <data name="Menu_Analize_Help" xml:space="preserve">
+    <value>Menu (analysis)</value>
+  </data>
+  <data name="Find_Similar_Title_Help" xml:space="preserve">
+    <value>🔍Find similar</value>
+  </data>
+  <data name="Find_Similar_Description_Help" xml:space="preserve">
+    <value>Finds similar documents to the selected one</value>
+  </data>
+  <data name="Clasterization_Title_Help" xml:space="preserve">
+    <value>📊Clasterization</value>
+  </data>
+  <data name="Clasterization_Description_Help" xml:space="preserve">
+    <value>Performs document distribution into clusters of the most similar documents. The number of clusters is selected by the user using the "Number of clusters" slider.</value>
+  </data>
+  <data name="FreqDictionary_Title_Help" xml:space="preserve">
+    <value>📖Frequency dictionary</value>
+  </data>
+  <data name="Menu_Other_Help" xml:space="preserve">
+    <value>Menu (other buttons)</value>
+  </data>
+  <data name="Save_Button_Title_Help" xml:space="preserve">
+    <value>💾Save</value>
+  </data>
+  <data name="Save_Button_Description_Help" xml:space="preserve">
+    <value>Saves the document body to a JSON file that can be opened later</value>
+  </data>
+  <data name="FreqDictionary_Description_Help" xml:space="preserve">
+    <value>A dictionary that shows a word and how often it occurs</value>
+  </data>
+  <data name="Clear_Title_Help" xml:space="preserve">
+    <value>🗑️Clear</value>
+  </data>
+  <data name="Clear_Description_Help" xml:space="preserve">
+    <value>Clears all content from all fields and tabs that was obtained while working with documents</value>
+  </data>
+  <data name="IndexStatus_NotBuilt" xml:space="preserve">
+    <value>Index is not build</value>
+  </data>
+  <data name="IndexStatus_Building" xml:space="preserve">
+    <value>Build...</value>
+  </data>
+  <data name="IndexStatus_Built" xml:space="preserve">
+    <value>Index is built</value>
+  </data>
+  <data name="Clustering_Error_Title" xml:space="preserve">
+    <value>Error of clasterization</value>
+  </data>
+  <data name="Clustering_Error_KTooLarge" xml:space="preserve">
+    <value>The number of clusters is greater than the number of documents in the corpus.</value>
+  </data>
+  <data name="Clustering_Status_ValidationFailed" xml:space="preserve">
+    <value>Clustering failed</value>
+  </data>
+  <data name="Important_Title_Help" xml:space="preserve">
+    <value>Important!</value>
+  </data>
+  <data name="Important_Description_Help" xml:space="preserve">
+    <value>For the "📊Clustering", "🔍Find Similar" and "📖Frequency dictionary" buttons to work, you must click the "Build Index" button, otherwise the buttons will be inactive. Also, for the "🔍Find Similar" button to work, you must select a document.</value>
+  </data>
+  <data name="Similar_IndexRequired" xml:space="preserve">
+    <value>TO BEGIN, YOU NEED TO BUILD AN INDEX (BUILD INDEX BUTTON) AND SELECT THE REQUIRED DOCUMENT</value>
+  </data>
+  <data name="Similar_IndexRequiredClustering" xml:space="preserve">
+    <value>TO BEGIN, YOU NEED TO BUILD AN INDEX (BUILD INDEX BUTTON) </value>
+  </data>
+  <data name="SimilarDocumentNotFound_Text" xml:space="preserve">
+    <value>No similar documents found!</value>
+  </data>
+  <data name="Information_Title" xml:space="preserve">
+    <value>Information</value>
   </data>
 </root>

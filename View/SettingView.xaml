@@ -16,7 +16,7 @@
         Height="240"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize" d:DesignWidth="450"
-        Background="{StaticResource ContentBackgroundBrush}">
+        Background="{DynamicResource ContentBackgroundBrush}">
     <Grid Margin="25">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -32,9 +32,7 @@
 
         <TextBlock Grid.Row="0" Grid.Column="0"
                    Text="{loc:Loc Settings_Language}" 
-                   FontWeight="SemiBold" 
-                   Foreground="#1E293B" 
-                   FontSize="14" 
+                   Style="{DynamicResource BodyText}" 
                    VerticalAlignment="Center"
                    Margin="0,0,20,0"/>
 
@@ -42,18 +40,17 @@
                   Grid.Row="0" Grid.Column="1"
                   ItemsSource="{Binding AvailableLanguages}" 
                   SelectedItem="{Binding SelectedLanguage}" 
-                  DisplayMemberPath="DisplayName" 
+                  DisplayMemberPath="DisplayName"
                   Margin="10,0,0,0" 
-                  Padding="10"
-                  FontSize="14"
+                  Padding="10, 0, 4, 0"
+                  Style="{DynamicResource ModernComboBox}"                     
+                  ItemContainerStyle="{DynamicResource ModernComboBoxItem}"
                   VerticalAlignment="Center" 
                   Height="35"/>
 
         <TextBlock Grid.Row="1" Grid.Column="0"
-                   Text="{loc:Loc Settings_Theme}" 
-                   FontWeight="SemiBold" 
-                   Foreground="#1E293B" 
-                   FontSize="14" 
+                   Text="{loc:Loc Settings_Theme}"
+                   Style="{StaticResource BodyText}"
                    VerticalAlignment="Center"
                    Margin="0,20,20,0"/>
 
@@ -62,8 +59,8 @@
                     HorizontalAlignment="Left" 
                     Margin="10,20,0,0"
                     VerticalAlignment="Center">
-            <RadioButton Style="{StaticResource ThemeToggleButtonStyle}"
-                         Content="{loc:Loc Settings_Theme_Light}"
+            <RadioButton Style="{DynamicResource ThemeToggleButtonStyle}"
+                         
                          GroupName="Theme"
                          Margin="0,0,10,0"
                          Background="White"
@@ -71,8 +68,8 @@
                          BorderBrush="#CBD5E1"
                          ToolTip="{loc:Loc Settings_Theme_Light}"
                          IsChecked="{Binding SelectedTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light}"/>
-            <RadioButton Style="{StaticResource ThemeToggleButtonStyle}"
-                         Content="{loc:Loc Settings_Theme_Dark}"
+            <RadioButton Style="{DynamicResource ThemeToggleButtonStyle}"
+                         
                          GroupName="Theme"
                          Background="#1E293B"
                          Foreground="White"
@@ -88,14 +85,14 @@
             <Button Content="{loc:Loc Settings_Cancel}"
                     Command="{Binding CancelCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
-                    Style="{StaticResource DangerButton}"
+                    Style="{DynamicResource DangerButton}"
                     Width="100"
                     Height="35"
                     FontSize="14"/>
             <Button Content="{loc:Loc Settings_Apply}"
                     Command="{Binding ApplyCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
-                    Style="{StaticResource SecondaryButton}"
+                    Style="{DynamicResource SecondaryButton}"
                     Width="100"
                     Height="35"
                     FontSize="14"/>

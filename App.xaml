@@ -1,16 +1,35 @@
 ﻿<Application x:Class="KURSOVA.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="View/MainWindow.xaml"
              xmlns:converters="clr-namespace:KURSOVA.Converters">
 
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
 
-                <ResourceDictionary Source="Themes/LightTheme.xaml"/>
+                <ResourceDictionary Source="/Themes/LightTheme.xaml"/>
 
-                <ResourceDictionary Source="Styles.xaml"/>
+                <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
+
+                <ResourceDictionary Source="Styles/CardStyles.xaml"/>
+
+                <ResourceDictionary Source="Styles/Controls.xaml"/>
+
+                <ResourceDictionary Source="Styles/TextStyles.xaml"/>
+
+                <ResourceDictionary Source="/Styles/ListBoxStyles.xaml"/>
+
+                <ResourceDictionary Source="Styles/ScrollStyles.xaml"/>
+                
+                <ResourceDictionary Source="/Styles/SlyderStyle.xaml"/>
+                
+                <ResourceDictionary Source="Styles/DataGridStyles.xaml"/>
+
+                <ResourceDictionary Source="/Styles/ComboBoxStyles.xaml"/>
+
+                <ResourceDictionary Source="Styles/ListViewStyles.xaml"/>
+
+
 
             </ResourceDictionary.MergedDictionaries>
 

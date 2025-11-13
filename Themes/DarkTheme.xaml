@@ -25,6 +25,7 @@
     <Color x:Key="InfoBorderColor">#166534</Color>
     <Color x:Key="InfoForegroundPrimaryColor">#86EFAC</Color>
     <Color x:Key="InfoForegroundSecondaryColor">#A7F3D0</Color>
+    <Color x:Key="AlternatingRowColor">#242F40</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
     <SolidColorBrush x:Key="PrimaryHoverBrush" Color="{StaticResource PrimaryHoverColor}"/>
@@ -48,7 +49,7 @@
     <SolidColorBrush x:Key="InfoBorderBrush" Color="{StaticResource InfoBorderColor}"/>
     <SolidColorBrush x:Key="InfoForegroundPrimaryBrush" Color="{StaticResource InfoForegroundPrimaryColor}"/>
     <SolidColorBrush x:Key="InfoForegroundSecondaryBrush" Color="{StaticResource InfoForegroundSecondaryColor}"/>
-
+    <SolidColorBrush x:Key="AlternatingRowBrush" Color="{StaticResource AlternatingRowColor}"/>
     <SolidColorBrush x:Key="ScrollBarTrackBrush" Color="#334155"/>
     <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="#475569"/>
     <SolidColorBrush x:Key="ScrollBarThumbHoverBrush" Color="#94A3B8"/>

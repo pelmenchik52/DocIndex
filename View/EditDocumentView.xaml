@@ -42,7 +42,7 @@
             <Button Content="{loc:Loc General_Save}"
                     Command="{Binding btnSaveDocument}"
                     Style="{DynamicResource SecondaryButton}" Padding="16,8" Width="120"
-                    IsDefault="True" Height="24"/>
+                    IsDefault="True" Height="35"/>
         </StackPanel>
 
     </Grid>

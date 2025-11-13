@@ -12,7 +12,8 @@
         Height="800" Width="1400"
         MinHeight="700" MinWidth="1100"
         Background="{DynamicResource ContentBackgroundBrush}"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Icon="/iconca.ico">
 
     <Window.Resources>
     </Window.Resources>
@@ -20,11 +21,6 @@
     <DockPanel LastChildFill="True">
 
         <Menu DockPanel.Dock="Top" Background="{DynamicResource ContentBackgroundBrush}">
-            <MenuItem Header="{loc:Loc Menu_File}">
-                <MenuItem Header="{loc:Loc Menu_File_Save}" Command="{Binding btnSaveCorpus}"/>
-                <Separator/>
-                <MenuItem Header="{loc:Loc Menu_File_Exit }" Command="{Binding btnExitApp}"/>
-            </MenuItem>
             <MenuItem Header="{loc:Loc Menu_Settings}" Command="{Binding btnSetting}"/>
             <MenuItem Header="{loc:Loc Menu_Help}" Command="{Binding btnHelpMenu}"/>
         </Menu>
@@ -35,7 +31,7 @@
                            Foreground="{DynamicResource TextSecondaryBrush}"/>
             </StatusBarItem>
             <StatusBarItem HorizontalAlignment="Right">
-                <ProgressBar Width="150" Height="18" 
+                <ProgressBar Width="393" Height="18" 
                              IsIndeterminate="{Binding IsBusy}" 
                              Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             </StatusBarItem>
@@ -66,13 +62,14 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <view:ManagementView Grid.Column="0" />
+                <view:ManagementView  Grid.Column="0" DataContext="{Binding ManagementVM}" />
 
                 <Border Grid.Column="1" Style="{DynamicResource CardBorder}" Margin="10,0,0,0">
                     <Grid>
-                        <TabControl Grid.Row="0" Grid.RowSpan="2" 
-                                    BorderThickness="0" 
-                                    Background="Transparent">
+                        <TabControl Grid.Row="0" Grid.RowSpan="2"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    SelectedIndex="{Binding SelectedTabIndex}">
 
                             <TabItem>
                                 <TabItem.Header>
@@ -111,9 +108,8 @@
                                     <TextBlock Text="{loc:Loc Tab_Stats}" FontSize="14" FontWeight="SemiBold"
                                                Foreground="{DynamicResource TextSecondaryBrush}"/>
                                 </TabItem.Header>
-                                <view:StatsView />
+                                <view:StatsView DataContext="{Binding StatsVM}"/>
                             </TabItem>
-
                         </TabControl>
                     </Grid>
                 </Border>

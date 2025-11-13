@@ -33,10 +33,14 @@ d:DesignHeight="600" d:DesignWidth="1000">
                    Foreground="{DynamicResource InfoForegroundPrimaryBrush}"
                    Margin="0,0,0,4"/>
 
-                <TextBlock Text="{loc:Loc Keywords_TfIdfInfo}"
+                <TextBlock 
                    FontSize="11"
                    Foreground="{DynamicResource InfoForegroundSecondaryBrush}"
-                   TextWrapping="Wrap"/>
+                   TextWrapping="Wrap"> 
+                        <Run Text="{loc:Loc Keywords_TfIdfInfo}" FontWeight="SemiBold"/>
+                        <Run Text=": "/>
+                        <Run Text="{Binding CorpusInfoText}"/>
+                    </TextBlock>
             </StackPanel>
         </Border>
 
@@ -58,8 +62,7 @@ d:DesignHeight="600" d:DesignWidth="1000">
                   BorderThickness="0"
                   RowHeight="40"
                   CanUserResizeRows="False"
-                  Background="Transparent"
-                  AlternatingRowBackground="#F9FAFB">
+                  Background="Transparent">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{loc:Loc Keywords_Header_Word}" 
                                     Binding="{Binding Word}" 

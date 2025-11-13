@@ -1,25 +1,92 @@
 ﻿<UserControl x:Class="KURSOVA.View.StatsView"
-            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-xmlns:vm="clr-namespace:KURSOVA.ViewModel"
-xmlns:model="clr-namespace:KURSOVA.Model"
-xmlns:sys="clr-namespace:System;assembly=mscorlib"
-xmlns:loc="clr-namespace:KURSOVA.Localization"
-mc:Ignorable="d" 
-d:DesignHeight="600" d:DesignWidth="1000">
-    <Grid Margin="0,10,0,0">
-            <Border Style="{DynamicResource CardBorder}"
-                BorderThickness="2" CornerRadius="8">
-                <TextBlock Text="{loc:Loc Stats_Placeholder}" 
-                       HorizontalAlignment="Center" 
-                       VerticalAlignment="Center" 
-                       FontSize="16" 
-                       Foreground="#94A3B8"
-                       TextWrapping="Wrap"/>
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:KURSOVA.Localization"
+             xmlns:vm="clr-namespace:KURSOVA.ViewModel"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=vm:StatsViewModel}"
+             d:DesignHeight="600" d:DesignWidth="1000">
+
+    <ScrollViewer Style="{DynamicResource ModernScrollViewer}" VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Grid.Column="0" Style="{DynamicResource CardBorder}" Margin="0,0,10,10">
+                <StackPanel>
+                    <TextBlock Text="{loc:Loc Stats_GeneralTitle}" Style="{DynamicResource SubHeaderText}"/>
+
+                    <TextBlock Style="{DynamicResource CaptionText}" Margin="0,0,0,4">
+                        <Run Text="{loc:Loc Stats_DocsCount}"/>
+                        <Run Text="{Binding DocumentCount}" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Style="{DynamicResource CaptionText}" Margin="0,0,0,4">
+                        <Run Text="{loc:Loc Stats_TotalWords}"/>: 
+                        <Run Text="{Binding TotalWordCount, StringFormat='N0', ConverterCulture='uk-UA'}" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Style="{DynamicResource CaptionText}">
+                        <Run Text="{loc:Loc Stats_UniqueWords}"/>: 
+                        <Run Text="{Binding UniqueWordCount, StringFormat='N0', ConverterCulture='uk-UA'}" FontWeight="Bold"/>
+                    </TextBlock>
+                </StackPanel>
             </Border>
+
+            <Border Grid.Row="0" Grid.Column="1" Style="{DynamicResource CardBorder}" Margin="10,0,0,10">
+                <StackPanel>
+                    <TextBlock Text="{loc:Loc Stats_AnalysisTitle}" Style="{DynamicResource SubHeaderText}"/>
+
+                    <TextBlock Style="{DynamicResource CaptionText}" Margin="0,0,0,4">
+                        <Run Text="{loc:Loc Stats_LexicalRichness}"/> (TTR): 
+                        <Run Text="{Binding LexicalRichness, StringFormat='P1', ConverterCulture='uk-UA'}" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Style="{DynamicResource CaptionText}">
+                        <Run Text="{loc:Loc Stats_Hapax}"/>: 
+                        <Run Text="{Binding HapaxLegomena, StringFormat='N0', ConverterCulture='uk-UA'}" FontWeight="Bold"/>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="0" Style="{DynamicResource CardBorder}" Margin="0,10,10,0">
+                <StackPanel>
+                    <TextBlock Text="{loc:Loc Stats_DocStatsTitle}" Style="{DynamicResource SubHeaderText}"/>
+                    <TextBlock Style="{DynamicResource CaptionText}" Margin="0,0,0,4">
+                        <Run Text="{loc:Loc Stats_AvgLength}"/>: 
+                        <Run Text="{Binding AvgDocLength, StringFormat='N0', ConverterCulture='uk-UA'}" FontWeight="Bold"/> слів
+                    </TextBlock>
+                    <TextBlock Style="{DynamicResource CaptionText}" Margin="0,0,0,4">
+                        <Run Text="{loc:Loc Stats_LongestDoc}"/>: 
+                        <Run Text="{Binding LongestDocument}" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Style="{DynamicResource CaptionText}">
+                        <Run Text="{loc:Loc Stats_ShortestDoc}"/>: 
+                        <Run Text="{Binding ShortestDocument}" FontWeight="Bold"/>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="1" Style="{DynamicResource CardBorder}" Margin="10,10,0,0">
+                <StackPanel>
+                    <TextBlock Text="{loc:Loc Stats_WordStatsTitle}" Style="{DynamicResource SubHeaderText}"/>
+                    <TextBlock Style="{DynamicResource CaptionText}" Margin="0,0,0,4">
+                        <Run Text="{loc:Loc Stats_AvgWordLength}"/>: 
+                        <Run Text="{Binding AvgWordLength, StringFormat='F1', ConverterCulture='uk-UA'}" FontWeight="Bold"/> символів
+                    </TextBlock>
+                    <TextBlock Style="{DynamicResource CaptionText}" Margin="0,0,0,12">
+                        <Run Text="{loc:Loc Stats_LongestWord}"/>: 
+                        <Run Text="{Binding LongestWord}" FontWeight="Bold"/>
+                    </TextBlock>
+
+                </StackPanel>
+            </Border>
+
         </Grid>
-   
+    </ScrollViewer>
 </UserControl>

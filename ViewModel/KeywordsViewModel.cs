@@ -1,168 +1,144 @@
 ﻿using KURSOVA.Commands;
-using KURSOVA.Model;
 using KURSOVA.Model.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Printing;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System;
+using KURSOVA.Model;
+using KURSOVA.Properties.Localizations;
+using KURSOVA.Services; 
 
 namespace KURSOVA.ViewModel
 {
-    public class KeywordsViewModel : INotifyPropertyChanged
+    // ViewModel для відображення ключових слів, їхніх оцінок (TF-IDF) та статистики корпусу.
+    public class KeywordsViewModel : ViewModelBase
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
+        private readonly IAnalyzer _analyzer;
+        private readonly IDialogService _dialogService; 
+
+        // Властивості даних 
+
+        private string _corpusInfoText;
+        // Загальний інформаційний рядок зі статистикою корпусу.
+        public string CorpusInfoText
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            get => _corpusInfoText;
+            set
+            {
+                _corpusInfoText = value;
+                OnPropertyChanged(nameof(CorpusInfoText));
+            }
         }
 
-        public ObservableCollection<KeywordItem> Keywords { get; set; }
-        public ICommand ExportKeywordsCommand { get; set; }
+        // Колекція ключових слів, прив'язана до View.
+        public ObservableCollection<KeywordItem> Keywords { get; }
 
+        // Команди 
+        public ICommand ExportKeywordsCommand { get; }
 
-        private static readonly HashSet<string> StopWords = new HashSet<string>
+        //  Конструктор
+        public KeywordsViewModel(IAnalyzer analyzer, IDialogService dialogService)
         {
-            "і", "в", "з", "на", "та", "до", "не", "по", "для", "про", "він", "вона",
-            "це", "що", "як", "а", "але", "був", "була", "було", "були", "його", "її",
-            "ми", "ви", "вони", "від", "за", "під", "над", "при", "про", "без", "ти",
-            "ж", "б", "чи", "тільки", "ще", "вже", "або", "я", "у", "зі", "проте",
-            "який", "яка", "яке", "які", "й", "цей", "ця", "ці", "того", "тому", "щоб", "1"
-        };
+            _analyzer = analyzer;      
+            _dialogService = dialogService; 
 
-        public KeywordsViewModel()
-        {
             Keywords = new ObservableCollection<KeywordItem>();
+
             ExportKeywordsCommand = new RelayCommand(ExportKeywordsAction, CanExport);
-
-            Corpus.Instance.Documents.CollectionChanged += (s, e) => CalculateKeywords();
-
-            // Первинний розрахунок при запуску
-            CalculateKeywords();
         }
-        private bool CanExport(object obj)
+
+        // Логіка завантаження даних 
+
+        // Метод, який викликається ManagementVM після успішної індексації.
+        public void LoadKeywordsAction()
         {
-            // Дозволяємо експорт, лише якщо є що експортувати
-            return Keywords.Count > 0;
-        }
-        private void CalculateKeywords()
-        {
-            var allDocs = Corpus.Instance.Documents;
-            if (allDocs.Count == 0)
-            {
-                Keywords.Clear();
-                return ;
-            }
-
-            int totalDocCount = allDocs.Count;
-
-            var globalWordFrequency = new Dictionary<string, int>();
-
-            var docFrequency = new Dictionary<string, int>();
-            foreach (var doc in allDocs)
-            {
-                // Токенізація: ділимо текст на слова, прибираємо знаки пунктуації,
-                // переводимо в нижній регістр та ігноруємо стоп-слова.
-                var words = Regex.Split(doc.FullText.ToLower(), @"\W+")
-                                 .Where(w => !string.IsNullOrWhiteSpace(w) &&
-                                             w.Length > 2 && // Ігноруємо слова з 2-х і менше літер
-                                             !StopWords.Contains(w));
-
-                var uniqueWordsInDoc = new HashSet<string>();
-
-                foreach (var word in words)
-                {
-                    // Додаємо до загальної частоти
-                    globalWordFrequency.TryAdd(word, 0);
-                    globalWordFrequency[word]++;
-
-                    // Додаємо до списку унікальних слів для цього документа
-                    uniqueWordsInDoc.Add(word);
-                }
-
-                // Оновлюємо лічильник "Document Frequency"
-                foreach (var uniqueWord in uniqueWordsInDoc)
-                {
-                    docFrequency.TryAdd(uniqueWord, 0);
-                    docFrequency[uniqueWord]++;
-                }
-            }
-
-            // --- КРОК 2: Розраховуємо TF-IDF та заповнюємо колекцію ---
-            var keywordList = new List<KeywordItem>();
-            foreach (var (word, totalFreq) in globalWordFrequency)
-            {
-                if (!docFrequency.ContainsKey(word)) continue;
-
-                int docsContaining = docFrequency[word];
-
-                // Розрахунок IDF
-                // (Беремо log10, щоб уникнути занадто великих чисел)
-                double idf = Math.Log10((double)totalDocCount / docsContaining);
-
-                // Наш "Score" - це загальна частота, помножена на "важливість" слова
-                double score = totalFreq * idf;
-
-                keywordList.Add(new KeywordItem
-                {
-                    Word = word,
-                    Frequency = totalFreq,
-                    Score = score
-                });
-            }
-
-            // --- КРОК 3: Оновлюємо UI ---
-            // Сортуємо за балами (Score) і беремо, наприклад, 100 найкращих
-            var sortedKeywords = keywordList.OrderByDescending(k => k.Score).Take(100);
-
             Keywords.Clear();
-            foreach (var k in sortedKeywords)
+
+            // 1. Отримуємо ключові слова з Analyzer.
+            var keywordsList = _analyzer.GetCorpusKeywords().ToList();
+
+            // 2. Додаємо до ObservableCollection (обмежено 100 найбільш важливими).
+            foreach (var item in keywordsList.Take(100))
             {
-                Keywords.Add(k);
+                Keywords.Add(item);
             }
 
-            // Оновлюємо стан кнопки "Експорт"
+            // 3. Оновлюємо стан команди (CanExecute).
             (ExportKeywordsCommand as RelayCommand)?.RaiseCanExecuteChanged();
 
-        
+            // 4. Формування інформаційного рядка.
+            if (Keywords.Any())
+            {
+                string mostImportantWord = Keywords.First().Word;
+                int uniqueWords = _analyzer.GetUniqueWordCount();
+                int totalWords = _analyzer.GetTotalProcessedWordCount();
+
+                string formatString = Resources.Keywords_Info_Stats;
+
+                // Використовуємо string.Format для підстановки даних.
+                CorpusInfoText = string.Format(
+                    formatString,
+                    mostImportantWord,
+                    uniqueWords,
+                    totalWords
+                );
+            }
+            else
+            {
+                CorpusInfoText = Resources.Keywords_Info_Empty;
+            }
         }
+
+        // Логіка CanExecute
+        private bool CanExport(object obj)
+        {
+            // Дозволяємо експорт, лише якщо колекція не порожня.
+            return Keywords.Any();
+        }
+
+        // Логіка експорту
         private void ExportKeywordsAction(object obj)
         {
-            var dlg = new Microsoft.Win32.SaveFileDialog
-            {
-                FileName = $"Keywords_{DateTime.Now:yyyyMMdd}.csv",
-                DefaultExt = ".csv",
-                Filter = "CSV Files (*.csv)|*.csv"
-            };
+            // 1. Використовуємо IDialogService для отримання шляху збереження.
+            string filePath = _dialogService.ShowSaveFileDialog(
+                filter: "CSV Files (*.csv)|*.csv",
+                defaultFileName: $"Keywords_{DateTime.Now:yyyyMMdd}.csv"
+            );
 
-            if (dlg.ShowDialog() == true)
+            if (!string.IsNullOrEmpty(filePath))
             {
                 try
                 {
+                    // 2. Генерація контенту CSV (I/O логіка).
                     var sb = new StringBuilder();
-                    sb.AppendLine("Word;Score;Frequency"); // Заголовки
+                    sb.AppendLine("Word;Score;Frequency");
 
                     foreach (var k in Keywords)
                     {
-                        sb.AppendLine($"{k.Word};{k.Score};{k.Frequency}"); // Дані
+                        // Форматування Score до 4 знаків після коми.
+                        sb.AppendLine($"{k.Word};{k.Score:F4};{k.Frequency}");
                     }
 
-                    File.WriteAllText(dlg.FileName, sb.ToString(), Encoding.UTF8);
+                    // 3. Запис у файл.
+                    File.WriteAllText(filePath, sb.ToString(), Encoding.UTF8);
 
-                    MessageBox.Show("Експорт успішно завершено!", "Експорт",
-                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    // 4. Повідомлення про успіх через IDialogService.
+                    _dialogService.ShowMessage(
+                        $"Keywords succesfuly saved to:\n{filePath}",
+                        "Succes"
+                    );
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Помилка при збереженні файлу: {ex.Message}", "Помилка",
-                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    // 5. Повідомлення про помилку через IDialogService.
+                    _dialogService.ShowMessage(
+                        $"Error during saving file: {ex.Message}",
+                        "Error"
+                    );
                 }
             }
         }

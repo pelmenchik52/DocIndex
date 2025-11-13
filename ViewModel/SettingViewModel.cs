@@ -6,26 +6,25 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows;
-using System.Windows.Input;         // <-- Потрібно для ICommand
+using System.Windows.Input;
+using System.Windows.Data;
+using System.IO;
+using System.Text.Json;
 using KURSOVA.Model;
 using KURSOVA.Localization;
-using KURSOVA.Commands;           
+using KURSOVA.Commands;
+using KURSOVA.Services;
 
 namespace KURSOVA.ViewModel
 {
-    public class Language
+    // ViewModel для керування налаштуваннями програми (тема та мова).
+    public class SettingViewModel : ViewModelBase
     {
-        public string DisplayName { get; set; }
-        public string CultureName { get; set; }
-    }
+        private readonly IDialogService _dialogService;
+        private readonly IThemeService _themeService;
+        private Action _closeAction;
 
-    class SettingViewModel : INotifyPropertyChanged
-    {
-
-        private Theme _originalTheme;
-        private Language _originalLanguage;
-
- 
+        //  Властивості Налаштувань 
         private Theme _selectedTheme;
         public Theme SelectedTheme
         {
@@ -33,33 +32,36 @@ namespace KURSOVA.ViewModel
             set
             {
                 _selectedTheme = value;
-                OnPropertyChanged();
-               
+                OnPropertyChanged(nameof(SelectedTheme));
             }
         }
 
+        // Мови
         public List<Language> AvailableLanguages { get; set; }
 
         private Language _selectedLanguage;
+        // Вибрана мова
         public Language SelectedLanguage
         {
             get { return _selectedLanguage; }
             set
             {
                 _selectedLanguage = value;
-                OnPropertyChanged();
-               
+                OnPropertyChanged(nameof(SelectedLanguage));
             }
         }
 
-
+        //  Команди 
         public ICommand ApplyCommand { get; set; }
         public ICommand CancelCommand { get; set; }
 
-
-
-        public SettingViewModel()
+        // Конструктор
+        public SettingViewModel(IDialogService dialogService, IThemeService themeService, Action closeAction)
         {
+            _dialogService = dialogService;
+            _themeService = themeService;
+            _closeAction = closeAction;
+
             ApplyCommand = new RelayCommand(OnApply, CanAlwaysExecute);
             CancelCommand = new RelayCommand(OnCancel, CanAlwaysExecute);
 
@@ -69,116 +71,77 @@ namespace KURSOVA.ViewModel
                 new Language { DisplayName = "Українська", CultureName = "uk-UA" }
             };
 
-            LoadCurrentSettings();
+            LoadSettings();
         }
 
-        private void OnApply(object parameter)
+        // Логіка iніціалізації 
+        private void LoadSettings()
         {
-            ApplyLanguage(SelectedLanguage);
-            ApplyTheme(SelectedTheme);
+            var currentCulture = LocalizationManager.Instance.CurrentCulture;
 
-            SaveCurrentSettings();
-
-           // CloseWindow(parameter);
-        }
-
-        // Метод для кнопки "Скасувати"
-        private void OnCancel(object parameter)
-        {
-            // 1. Повертаємо тему до тої, яка була при відкритті
-            if (_selectedTheme != _originalTheme)
-            {
-                ApplyTheme(_originalTheme);
-            }
-            // (Мову повертати не треба, бо ми її не застосовували)
-
-            //CloseWindow(parameter);
-        }
-
-
-
-        private void LoadCurrentSettings()
-        {
-            // Наприклад, завантажуємо з налаштувань програми
-            // (Переконайтеся, що ви створили 'Theme' і 'Language' у Properties.Settings.Default)
-            // string savedLang = Properties.Settings.Default.Language;
-            // string savedTheme = Properties.Settings.Default.Theme;
-
-            // --- Завантаження Мови ---
-            // (Поки що використовуємо поточну культуру, як у вашому коді)
             _selectedLanguage = AvailableLanguages.FirstOrDefault(
-                lang => lang.CultureName == Thread.CurrentThread.CurrentUICulture.Name
-            ) ?? AvailableLanguages[1]; // Українська за замовчуванням
+                lang => lang.CultureName == currentCulture.Name
+            ) ?? AvailableLanguages.FirstOrDefault(l => l.CultureName == "uk-UA");
 
-            // --- Завантаження Теми ---
-            // (Поки що Світла за замовчуванням, але краще завантажувати збережену)
-            _selectedTheme = Theme.Light; // <-- Замініть на завантаження збереженої теми
+            _selectedTheme = Theme.Light;
 
-            // Зберігаємо оригінальні значення для "Скасувати"
-            _originalLanguage = _selectedLanguage;
-            _originalTheme = _selectedTheme;
-
-            // Оновлюємо UI, щоб показати завантажені налаштування
             OnPropertyChanged(nameof(SelectedLanguage));
             OnPropertyChanged(nameof(SelectedTheme));
         }
 
-        private void SaveCurrentSettings()
+        // Логіка команд
+        private void OnApply(object parameter)
         {
-            // Зберігаємо у налаштування програми
-            // Properties.Settings.Default.Language = SelectedLanguage.CultureName;
-            // Properties.Settings.Default.Theme = SelectedTheme.ToString();
-            // Properties.Settings.Default.Save();
-        }
+            // 1. Застосовуємо тему через IThemeService.
+            _themeService.ApplyTheme(SelectedTheme);
 
-
-        private void ApplyLanguage(Language lang)
-        {
-            if (lang == null || lang.CultureName == Thread.CurrentThread.CurrentUICulture.Name)
-                return;
-
-            var culture = new CultureInfo(lang.CultureName);
-            Thread.CurrentThread.CurrentUICulture = culture;
-            LocalizationManager.Instance.RaiseLanguageChanged();
-        }
-
-        private void ApplyTheme(Theme theme)
-        {
-            var appDictionaries = Application.Current.Resources.MergedDictionaries;
-            string themeUri = (theme == Theme.Light) ? "Themes/LightTheme.xaml" : "Themes/DarkTheme.xaml";
-
-            var oldTheme = appDictionaries.FirstOrDefault(d => d.Source != null && (d.Source.OriginalString.Contains("LightTheme.xaml") || d.Source.OriginalString.Contains("DarkTheme.xaml")));
-            if (oldTheme != null)
+            // 2. Змінюємо культуру.
+            if (SelectedLanguage != null)
             {
-                // Якщо стара тема - це вже та, яку ми хочемо, нічого не робимо
-                if (oldTheme.Source.OriginalString.Contains(themeUri))
-                    return;
-                appDictionaries.Remove(oldTheme);
+                var culture = new CultureInfo(SelectedLanguage.CultureName);
+                LocalizationManager.Instance.CurrentCulture = culture;
             }
 
-            var newTheme = new ResourceDictionary { Source = new Uri(themeUri, UriKind.Relative) };
-            appDictionaries.Insert(0, newTheme);
+            // 3. Зберігаємо зміни.
+            SaveSettingsToFile();
+
+            // 4. Закриваємо вікно через Action.
+            _closeAction?.Invoke();
         }
 
-
+        private void OnCancel(object parameter)
+        {
+            // 1. Якщо потрібно, завантажуємо старі налаштування (якщо не було Apply).
+            // 2. Закриваємо вікно через Action.
+            _closeAction?.Invoke();
+        }
 
         private bool CanAlwaysExecute(object obj)
         {
-            return true; 
+            return true;
         }
 
-        private void CloseWindow(object parameter)
+        // Логіка збереження
+        private const string SettingsFilePath = "settings.json";
+
+        public void SaveSettingsToFile()
         {
-            if (parameter is Window window)
+            try
             {
-                window.Close();
-            }
-        }
+                var settings = new Dictionary<string, string>
+               {
+                 { "Theme", SelectedTheme.ToString() },
+                 { "Language", SelectedLanguage?.CultureName ?? "uk-UA" }
+               };
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                string json = JsonSerializer.Serialize(settings, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(SettingsFilePath, json);
+            }
+            catch (Exception ex)
+            {
+                // Використовуємо _dialogService для логування/повідомлення про помилки I/O
+                _dialogService.ShowMessage($"Error during saving file: {ex.Message}", "Error");
+            }
         }
     }
 }

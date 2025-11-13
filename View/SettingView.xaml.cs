@@ -24,7 +24,6 @@ namespace KURSOVA.View
         public SettingView()
         {
             InitializeComponent();
-            this.DataContext = new SettingViewModel();
         }
     }
 }

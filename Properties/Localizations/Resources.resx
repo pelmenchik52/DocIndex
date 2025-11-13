@@ -117,17 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Manage_LoadCorpus" xml:space="preserve">
+    <value>📑Завантажити корпус</value>
+  </data>
   <data name="Clusters_InfoText" xml:space="preserve">
-    <value>Інформація про тексти</value>
+    <value>Кластеризація - це поділ стосу документів на групки, які мають якусь спільну тему або порсто схожі між собою</value>
+  </data>
+  <data name="CountOfWordsFreq" xml:space="preserve">
+    <value>Кількість</value>
   </data>
   <data name="Docs_Delete" xml:space="preserve">
     <value>❌Видалити документ</value>
   </data>
   <data name="Docs_Edit" xml:space="preserve">
-    <value>Редагувати документ</value>
+    <value>📝Редагувати документ</value>
   </data>
   <data name="Docs_Search" xml:space="preserve">
     <value>🔍Знайти документ</value>
+  </data>
+  <data name="FindingWordFreq" xml:space="preserve">
+    <value>Слово</value>
+  </data>
+  <data name="Frequency_Title" xml:space="preserve">
+    <value>Словник частот</value>
   </data>
   <data name="Keywords_ExportCsv" xml:space="preserve">
     <value>Експортувати</value>
@@ -140,6 +152,12 @@
   </data>
   <data name="Keywords_Header_Word" xml:space="preserve">
     <value>Ключові слова</value>
+  </data>
+  <data name="Keywords_Info_Empty" xml:space="preserve">
+    <value>Не знайдено ключових слів. Можливо, корпус порожній.</value>
+  </data>
+  <data name="Keywords_Info_Stats" xml:space="preserve">
+    <value>Найвагоміше слово: "{0}" | Унікальних слів: {1} | Всього оброблено слів: {2}</value>
   </data>
   <data name="Keywords_TfIdfInfo" xml:space="preserve">
     <value>Інформація</value>
@@ -154,10 +172,10 @@
     <value>Побудувати індекс</value>
   </data>
   <data name="Manage_ClearAll" xml:space="preserve">
-    <value>Очистити</value>
+    <value>🗑️Очистити</value>
   </data>
   <data name="Manage_ClusterCount" xml:space="preserve">
-    <value>Кількість документів:</value>
+    <value>Кількість кластерів:</value>
   </data>
   <data name="Manage_Clustering" xml:space="preserve">
     <value>📊Кластеризація</value>
@@ -184,13 +202,13 @@
     <value>Журнал подій</value>
   </data>
   <data name="Manage_Save" xml:space="preserve">
-    <value>Зберегти</value>
+    <value>💾Зберегти</value>
   </data>
   <data name="Manage_StatsSection" xml:space="preserve">
     <value>Статистика</value>
   </data>
   <data name="Manage_Title" xml:space="preserve">
-    <value>&#x8;☰ Меню</value>
+    <value>☰Меню</value>
   </data>
   <data name="Menu_File" xml:space="preserve">
     <value>📄Файл</value>
@@ -208,7 +226,7 @@
     <value>Інструкція користувача</value>
   </data>
   <data name="Menu_Settings" xml:space="preserve">
-    <value>⚙️Налаштування</value>
+    <value>⚙️ Налаштування</value>
   </data>
   <data name="Settings_Apply" xml:space="preserve">
     <value>Застосувати</value>
@@ -223,7 +241,7 @@
     <value>🖌️Тема</value>
   </data>
   <data name="Similar_InfoText" xml:space="preserve">
-    <value>Інформація про документи</value>
+    <value>Відсоток схожості документів між собою за змістом</value>
   </data>
   <data name="Stats_AvgLength" xml:space="preserve">
     <value>Середня довжина</value>
@@ -244,7 +262,7 @@
     <value>📄Документ</value>
   </data>
   <data name="Tab_Keywords" xml:space="preserve">
-    <value>🔑Ключові слова</value>
+    <value>🔑Ключові слова:</value>
   </data>
   <data name="Tab_Similar" xml:space="preserve">
     <value>🔗Подібні документи</value>
@@ -257,5 +275,209 @@
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Docergänger</value>
+  </data>
+  <data name="Stats_TotalWords" xml:space="preserve">
+    <value>Всього слів</value>
+  </data>
+  <data name="Stats_GeneralTitle" xml:space="preserve">
+    <value>Загальні дані</value>
+  </data>
+  <data name="Stats_DocStatsTitle" xml:space="preserve">
+    <value>Статистика документів</value>
+  </data>
+  <data name="Stats_LongestDoc" xml:space="preserve">
+    <value>Найдовший документ</value>
+  </data>
+  <data name="Stats_ShortestDoc" xml:space="preserve">
+    <value>Найкоротший документ</value>
+  </data>
+  <data name="Stats_AnalysisTitle" xml:space="preserve">
+    <value>Детальний аналіз</value>
+  </data>
+  <data name="Stats_LexicalRichness" xml:space="preserve">
+    <value>Мовне багатство</value>
+  </data>
+  <data name="Stats_Hapax" xml:space="preserve">
+    <value>Хапакс легомена</value>
+  </data>
+  <data name="Stats_WordStatsTitle" xml:space="preserve">
+    <value>Статистика слів</value>
+  </data>
+  <data name="Stats_AvgWordLength" xml:space="preserve">
+    <value>Середня довжина слів</value>
+  </data>
+  <data name="Stats_LongestWord" xml:space="preserve">
+    <value>Найдовше слово</value>
+  </data>
+  <data name="General_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="General_Save" xml:space="preserve">
+    <value>💾Зберегти</value>
+  </data>
+  <data name="Edit_Title" xml:space="preserve">
+    <value>Редагування</value>
+  </data>
+  <data name="RestartRequiredMessage" xml:space="preserve">
+    <value>Чи впевнені ви що хочете змінити мову? </value>
+  </data>
+  <data name="Settings_Theme_Light" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="Settings_Theme_Dark" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="dragNDropText" xml:space="preserve">
+    <value>Перетягніть сюди файли або імпортуйте їх на вкладці меню "Імпортувати", щоб почати з ними працювати</value>
+  </data>
+  <data name="Info_Header_Text_Help" xml:space="preserve">
+    <value>Довідка</value>
+  </data>
+  <data name="Import_Files_Info_Help" xml:space="preserve">
+    <value>Імпорт файлів</value>
+  </data>
+  <data name="Instrution_To_Add_File" xml:space="preserve">
+    <value> 1. Для додавання одного файлу натисніть '📄Імпортувати файли" і виберіть .txt файл у вибраній директорії.</value>
+  </data>
+  <data name="Instrution_To_Add_Folder" xml:space="preserve">
+    <value>2. Для додавання всіх файлів з папки натисніть "📁Імпортувати папку" і виберіть потрібну папку з txt файлами.</value>
+  </data>
+  <data name="Document_Subtitle_Help" xml:space="preserve">
+    <value>📄Документи:</value>
+  </data>
+  <data name="Document_Description_Help" xml:space="preserve">
+    <value> Показує список всіх завантажених документів.</value>
+  </data>
+  <data name="Similar_Subtitle_Help" xml:space="preserve">
+    <value>🔗Подібні:</value>
+  </data>
+  <data name="Similar_Description_Help" xml:space="preserve">
+    <value>Дозволяє знайти документи, схожі на обраний.</value>
+  </data>
+  <data name="Clusters_Subtitle_Help" xml:space="preserve">
+    <value>📊Кластери:</value>
+  </data>
+  <data name="Clusters_Description_Help" xml:space="preserve">
+    <value>Групує схожі документи разом в кластери. Кількість груп документів залежить від того, скільки кластерів користувач вибрав.</value>
+  </data>
+  <data name="Tabs_Title_Help" xml:space="preserve">
+    <value>Вкладки</value>
+  </data>
+  <data name="Keywords_Subtitle_Help" xml:space="preserve">
+    <value>🔑Ключові слова:</value>
+  </data>
+  <data name="Keywords_Description_Help" xml:space="preserve">
+    <value>Таблиця, яка показує слова,  очки TF-IDF (наскільки вагоме слово) та їхню частоту (як часто вони зустрічаються в усіх документах. Також цю таблицю можна експортувати у вигляді таблиці, використовуючи кнопку "Експортувати"</value>
+  </data>
+  <data name="Statistic_Subtitle_Help" xml:space="preserve">
+    <value>📊Статистика:</value>
+  </data>
+  <data name="Statistic_Description_Help" xml:space="preserve">
+    <value>Вкладка, яка показує основну статистику та "рекорди"</value>
+  </data>
+  <data name="Menu_Title_Import_Help" xml:space="preserve">
+    <value>Меню (імпорт)</value>
+  </data>
+  <data name="Add_File_Title_Help" xml:space="preserve">
+    <value>📄Імпортувати файли</value>
+  </data>
+  <data name="Add_File_Description_Help" xml:space="preserve">
+    <value>Імпорт файлів формату .txt</value>
+  </data>
+  <data name="Add_Folder_Title_Help" xml:space="preserve">
+    <value>📁Імпортувати папку</value>
+  </data>
+  <data name="Add_Folder_Description_Help" xml:space="preserve">
+    <value>Імпортує всі .txt файли з вибраної папки</value>
+  </data>
+  <data name="Load_Corpus_Title_Help" xml:space="preserve">
+    <value>📑Завантажити корпус</value>
+  </data>
+  <data name="Load_Corpus_Description_Help" xml:space="preserve">
+    <value>Завантажує корпус документів з файлу JSON</value>
+  </data>
+  <data name="Import_Title_Help" xml:space="preserve">
+    <value>Імпорт </value>
+  </data>
+  <data name="Menu_Title_Indexation_Help" xml:space="preserve">
+    <value>Меню (індексація)</value>
+  </data>
+  <data name="Indexation_Title_Help" xml:space="preserve">
+    <value>Побудувати індекс</value>
+  </data>
+  <data name="Indexation_Description_Help" xml:space="preserve">
+    <value>Виводить на вкладку "🔑Ключові слова"  слова, їхні TF-IDF очки та скільки слів зустрічаєтсья в документах</value>
+  </data>
+  <data name="Menu_Analize_Help" xml:space="preserve">
+    <value>Меню (аналіз)</value>
+  </data>
+  <data name="Find_Similar_Title_Help" xml:space="preserve">
+    <value>🔍Знайти схожі</value>
+  </data>
+  <data name="Find_Similar_Description_Help" xml:space="preserve">
+    <value>Знаходить схожі документи до обраного</value>
+  </data>
+  <data name="Clasterization_Title_Help" xml:space="preserve">
+    <value>📊Кластеризація</value>
+  </data>
+  <data name="Clasterization_Description_Help" xml:space="preserve">
+    <value>Виконує розподіленя документів на групки найподібніших документів. Кількість групок вибирається користувачем за допомогою повзунка "Кількість кластерів"</value>
+  </data>
+  <data name="FreqDictionary_Title_Help" xml:space="preserve">
+    <value>📖Словник частот</value>
+  </data>
+  <data name="Menu_Other_Help" xml:space="preserve">
+    <value>Меню (інші кнопки)</value>
+  </data>
+  <data name="Save_Button_Title_Help" xml:space="preserve">
+    <value>💾Зберегти</value>
+  </data>
+  <data name="Save_Button_Description_Help" xml:space="preserve">
+    <value>Зберігає корпус документів у JSON файл, який в подальшому можна відкрити потім</value>
+  </data>
+  <data name="FreqDictionary_Description_Help" xml:space="preserve">
+    <value>Словник, який показує слово і наскільки часто воно зустрічається</value>
+  </data>
+  <data name="Clear_Title_Help" xml:space="preserve">
+    <value>🗑️Очистити</value>
+  </data>
+  <data name="Clear_Description_Help" xml:space="preserve">
+    <value>Очищає весь вміст зі всіх полів та вкладок, який був отриманий при роботі з документами</value>
+  </data>
+  <data name="IndexStatus_NotBuilt" xml:space="preserve">
+    <value>Index is not build</value>
+  </data>
+  <data name="IndexStatus_Building" xml:space="preserve">
+    <value>Будується...</value>
+  </data>
+  <data name="IndexStatus_Built" xml:space="preserve">
+    <value>Індекс побудовано</value>
+  </data>
+  <data name="Clustering_Error_Title" xml:space="preserve">
+    <value>Помилка кластеризації</value>
+  </data>
+  <data name="Clustering_Error_KTooLarge" xml:space="preserve">
+    <value>Кількість кластерів більша ніж кількість документів у корпусі</value>
+  </data>
+  <data name="Clustering_Status_ValidationFailed" xml:space="preserve">
+    <value>Не вдалося здійснити кластеризацію</value>
+  </data>
+  <data name="Important_Title_Help" xml:space="preserve">
+    <value>Важливо!</value>
+  </data>
+  <data name="Important_Description_Help" xml:space="preserve">
+    <value>Для роботи кнопок "📊Кластеризація" ,"🔍Знайти схожі" та "📖Словник частот" потрібно натиснути на кнопку "Побудувати індекс" в іншому випадку кнопки будуть неактивними. Також для роботи кнопки "🔍Знайти схожі" потрібно вибрати документ.</value>
+  </data>
+  <data name="Similar_IndexRequired" xml:space="preserve">
+    <value>ДЛЯ ПОЧАТКУ НЕОБХІДНО ПОБУДУВАТИ ІНДЕКС (КНОПКА "ПОБУДУВАТИ ІНДЕКС") І ВИБРАТИ НЕОБХІДНИЙ ДОКУМЕНТ</value>
+  </data>
+  <data name="Similar_IndexRequiredClustering" xml:space="preserve">
+    <value>ДЛЯ ПОЧАТКУ НЕОБХІДНО ПОБУДУВАТИ ІНДЕКС (КНОПКА "ПОБУДУВАТИ ІНДЕКС") </value>
+  </data>
+  <data name="SimilarDocumentNotFound_Text" xml:space="preserve">
+    <value>Не знайдено схожих документів!</value>
+  </data>
+  <data name="Information_Title" xml:space="preserve">
+    <value>Інформація</value>
   </data>
 </root>

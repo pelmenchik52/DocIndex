@@ -6,20 +6,17 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>iconca.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Page Remove="Styles.xaml" />
+    <Content Include="iconca.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Styles.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,10 +28,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Properties\Localizations\Resources.en-US.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Localizations\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net8.0-windows\" />
   </ItemGroup>
 
 </Project>
