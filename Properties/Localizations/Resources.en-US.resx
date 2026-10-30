@@ -274,7 +274,7 @@
     <value>Import, analyze, search for similar documents, and visualize clusters</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
-    <value>Docergänger</value>
+    <value>DocIndex</value>
   </data>
   <data name="Stats_TotalWords" xml:space="preserve">
     <value>Total words</value>

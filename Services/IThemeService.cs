@@ -1,6 +1,6 @@
-﻿using KURSOVA.Model;
+﻿using DocIndex.Model;
 
-namespace KURSOVA.Services
+namespace DocIndex.Services
 {
     // IThemeService: Контракт для служби, що керує динамічним застосуванням тем у додатку.
     public interface IThemeService

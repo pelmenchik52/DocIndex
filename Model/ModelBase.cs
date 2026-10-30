@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // ModelBase: Базовий клас для об'єктів Model, які повинні сповіщати UI про зміни.
     public abstract class ModelBase : INotifyPropertyChanged

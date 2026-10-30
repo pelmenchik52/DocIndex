@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Клас Cluster: Об'єкт даних (Model), який зберігає фінальний результат кластеризації K-Means.
     public class Cluster

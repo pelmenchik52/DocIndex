@@ -1,9 +1,9 @@
-﻿using KURSOVA.Model.Interfaces;
+﻿using DocIndex.Model.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KURSOVA.Model.Interfaces
+namespace DocIndex.Model.Interfaces
 {
     // Інтерфейс IKMeansCluster: Визначає контракт для служби, яка виконує
     // алгоритм кластеризації K-Means на документах.

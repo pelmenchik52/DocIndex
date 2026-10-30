@@ -2,9 +2,9 @@
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
-using KURSOVA.Properties.Localizations;
+using DocIndex.Properties.Localizations;
 
-namespace KURSOVA.Localization
+namespace DocIndex.Localization
 {
     //Розширення для XAML, яке дозволяє локалізувати рядки на основі ключа ({loc:Loc MyStringKey}).
     public class LocExtension : MarkupExtension

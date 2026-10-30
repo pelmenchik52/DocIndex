@@ -10,12 +10,12 @@ using System.Windows.Input;
 using System.Windows.Data;
 using System.IO;
 using System.Text.Json;
-using KURSOVA.Model;
-using KURSOVA.Localization;
-using KURSOVA.Commands;
-using KURSOVA.Services;
+using DocIndex.Model;
+using DocIndex.Localization;
+using DocIndex.Commands;
+using DocIndex.Services;
 
-namespace KURSOVA.ViewModel
+namespace DocIndex.ViewModel
 {
     // ViewModel для керування налаштуваннями програми (тема та мова).
     public class SettingViewModel : ViewModelBase

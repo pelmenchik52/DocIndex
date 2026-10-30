@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows; 
-using KURSOVA.Model.Interfaces; 
-using KURSOVA.ViewModel;   
-using KURSOVA.Model;         
+using DocIndex.Model.Interfaces; 
+using DocIndex.ViewModel;   
+using DocIndex.Model;         
 using Microsoft.Win32;     
-using KURSOVA.Services;
-using KURSOVA.View;
+using DocIndex.Services;
+using DocIndex.View;
 using Ookii.Dialogs.Wpf;
 
-namespace KURSOVA.Services
+namespace DocIndex.Services
 {
     // Реалізація IDialogService. Відповідає за всі взаємодії з UI, 
     // що включають модальні вікна та діалоги, ізолюючи ViewModel від System.Windows.
@@ -38,7 +38,7 @@ namespace KURSOVA.Services
             var editView = new EditDocumentView();
             Action closeAction = () => { editView.Close(); };
 
-            // 1. Створюємо ViewModel (конструктор тепер безпечний)
+            // 1. Створюємо ViewModel 
             var editVM = new EditDocumentViewModel(documentToEdit, closeAction, this);
 
             try

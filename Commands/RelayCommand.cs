@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace KURSOVA.Commands
+namespace DocIndex.Commands
 {
 
     //Клас RelayCommand реалізує інтерфейс ICommand для створення команд у WPF.

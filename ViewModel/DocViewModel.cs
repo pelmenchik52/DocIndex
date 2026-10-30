@@ -1,9 +1,9 @@
-﻿using KURSOVA.Model;
+﻿using DocIndex.Model;
 using System.Linq;
 using System;
-using KURSOVA.Model.Interfaces;
+using DocIndex.Model.Interfaces;
 
-namespace KURSOVA.ViewModel
+namespace DocIndex.ViewModel
 {
     // Обгортка (ViewModel Wrapper) для об'єкта даних IDocument.
     // Відповідає за представлення одного документа у списках (наприклад, ListBox, DataGrid).

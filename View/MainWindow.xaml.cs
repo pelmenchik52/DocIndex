@@ -1,6 +1,6 @@
-﻿using KURSOVA.Model.Classes;
-using KURSOVA.Services;
-using KURSOVA.ViewModel;
+﻿using DocIndex.Model.Classes;
+using DocIndex.Services;
+using DocIndex.ViewModel;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KURSOVA
+namespace DocIndex
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

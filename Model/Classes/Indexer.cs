@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using KURSOVA.Model.Interfaces;
+using DocIndex.Model.Interfaces;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Клас Indexer: Сервіс (частина Model), який створює та зберігає інвертований індекс корпусу.
     public class Indexer : IIndexer

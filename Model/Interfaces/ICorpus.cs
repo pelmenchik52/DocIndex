@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Інтерфейс ICorpus: Визначає контракт для центрального сховища документів (Corpus).
     // Реалізуючи цей інтерфейс, клас-сховище стає доступним для ViewModel.

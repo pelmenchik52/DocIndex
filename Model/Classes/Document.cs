@@ -6,9 +6,9 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using KURSOVA.ViewModel;
+using DocIndex.ViewModel;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Клас Document: зберігає дані документа та підтримує сповіщення про зміну властивостей.
     public class Document : ModelBase, IDocument 

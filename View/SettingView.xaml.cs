@@ -1,4 +1,4 @@
-﻿using KURSOVA.ViewModel;
+﻿using DocIndex.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KURSOVA.View
+namespace DocIndex.View
 {
     /// <summary>
     /// Interaction logic for SettingView.xaml

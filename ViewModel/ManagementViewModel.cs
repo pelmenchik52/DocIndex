@@ -1,8 +1,8 @@
-﻿using KURSOVA.Commands;
-using KURSOVA.Model;
-using KURSOVA.Model.Classes;
-using KURSOVA.Model.Interfaces;
-using KURSOVA.Services;
+﻿using DocIndex.Commands;
+using DocIndex.Model;
+using DocIndex.Model.Classes;
+using DocIndex.Model.Interfaces;
+using DocIndex.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,14 +15,14 @@ using System.Windows.Input;
 using Microsoft.Win32;
 using System.Text.Json;
 using System.IO;
-using KURSOVA.Properties.Localizations;
-using KURSOVA.Localization;
+using DocIndex.Properties.Localizations;
+using DocIndex.Localization;
 using System.Resources;
 
-namespace KURSOVA.ViewModel
+namespace DocIndex.ViewModel
 {
     // Керує основними операціями застосунку (Індексація, Кластеризація, I/O).
-    // По суті це меню порграми, де є реалізації всіх необхідих кнопкок
+    // По суті це меню порграми, де є реалізації всіх необхідних кнопкок
     public class ManagementViewModel : ViewModelBase
     {
         // Залежності та сервіси 

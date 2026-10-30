@@ -1,11 +1,11 @@
-﻿using KURSOVA.ViewModel;
+﻿using DocIndex.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Об'єкт, що представляє доступну мову.
     public class Language: ModelBase

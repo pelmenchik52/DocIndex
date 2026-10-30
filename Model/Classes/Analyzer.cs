@@ -1,11 +1,11 @@
-﻿using KURSOVA.Model.Interfaces;
+﻿using DocIndex.Model.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Клас Analyzer: виконує складну бізнес-логіку (TF-IDF аналіз, пошук подібності).
     // Він є частиною Model і використовує індекс для обчислень.
@@ -14,7 +14,7 @@ namespace KURSOVA.Model
         private readonly IIndexer _indexer;
         private readonly Corpus _corpus;
 
-        // Dependency Injection: Analyzer отримує готовий індексер через конструктор.
+        // Analyzer отримує готовий індексер через конструктор.
         public Analyzer(IIndexer indexer)
         {
             _indexer = indexer;

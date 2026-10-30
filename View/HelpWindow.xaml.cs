@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace KURSOVA.View
+namespace DocIndex.View
 {
     /// <summary>
     /// Interaction logic for HelpWindow.xaml

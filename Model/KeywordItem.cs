@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Model.Interfaces
+namespace DocIndex.Model.Interfaces
 {
     // Клас KeywordItem: Об'єкт даних (Model), що представляє слово
     // та його важливість (ключовість) у корпусі або кластері.

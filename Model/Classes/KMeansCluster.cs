@@ -1,14 +1,14 @@
-﻿using KURSOVA.Model.Classes;
-using KURSOVA.Model;
+﻿using DocIndex.Model.Classes;
+using DocIndex.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KURSOVA.Model.Interfaces;
+using DocIndex.Model.Interfaces;
 using System.Threading; 
 
-namespace KURSOVA.Model.Classes
+namespace DocIndex.Model.Classes
 {
     // Клас для виконання кластеризації K-Means на векторах TF-IDF.
     public class KMeansCluster : IKMeansCluster

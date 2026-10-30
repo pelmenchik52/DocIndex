@@ -1,6 +1,6 @@
-﻿using KURSOVA.Model;
+﻿using DocIndex.Model;
 
-namespace KURSOVA.ViewModel 
+namespace DocIndex.ViewModel 
 {
     // ViewModelBase успадковує механізм сповіщення від ModelBase.
     public abstract class ViewModelBase : ModelBase

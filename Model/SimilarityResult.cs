@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Клас SimilarityResult: Об'єкт даних (Model), що зберігає результат 
     // порівняння одного документа з цільовим документом.

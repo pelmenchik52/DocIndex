@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Інтерфейс IIndexer: Визначає контракт для служби, яка створює та зберігає
     // інвертований індекс корпусу та обчислює метрики TF-IDF.

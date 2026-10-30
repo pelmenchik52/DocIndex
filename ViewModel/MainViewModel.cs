@@ -1,9 +1,9 @@
-﻿using KURSOVA.Commands;
-using KURSOVA.Model;
-using KURSOVA.Model.Classes;
-using KURSOVA.Model.Interfaces;
-using KURSOVA.Services; 
-using KURSOVA.View;
+﻿using DocIndex.Commands;
+using DocIndex.Model;
+using DocIndex.Model.Classes;
+using DocIndex.Model.Interfaces;
+using DocIndex.Services; 
+using DocIndex.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace KURSOVA.ViewModel
+namespace DocIndex.ViewModel
 {
     // Головний контекст додатку, агрегує всі дочірні ViewModel і керує загальним станом.
     public class MainViewModel : ViewModelBase

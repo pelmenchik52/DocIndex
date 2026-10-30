@@ -1,4 +1,4 @@
-﻿using KURSOVA.Model;
+﻿using DocIndex.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,9 +6,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KURSOVA.Model.Interfaces;
+using DocIndex.Model.Interfaces;
 
-namespace KURSOVA.ViewModel
+namespace DocIndex.ViewModel
 {
     // ViewModel для відображення статистичних метрик корпусу (довжина, частота, лексичне багатство, рекорди тощо).
     public class StatsViewModel : ViewModelBase

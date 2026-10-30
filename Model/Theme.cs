@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Enum Theme: Об'єкт даних (Model), який визначає можливі стани теми інтерфейсу.
     // Використовується для забезпечення типу та обмеження вибору (наприклад, у ViewModel).

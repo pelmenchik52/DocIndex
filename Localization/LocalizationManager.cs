@@ -7,10 +7,10 @@ using System.Globalization;
 using System.Resources;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
-using KURSOVA.ViewModel;
-using KURSOVA.Model;
+using DocIndex.ViewModel;
+using DocIndex.Model;
 
-namespace KURSOVA.Localization
+namespace DocIndex.Localization
 {
     // Клас є Singleton-сервісом, що керує поточною мовою і сповіщає про її зміну.
     public class LocalizationManager : ModelBase
@@ -20,7 +20,7 @@ namespace KURSOVA.Localization
 
         // Ініціалізація ResourceManager, який зчитує вбудовані ресурсні файли (.resx).
         private readonly ResourceManager _resourceManager =
-            new ResourceManager("KURSOVA.Properties.Localizations.Resources", typeof(LocalizationManager).Assembly);
+            new ResourceManager("DocIndex.Properties.Localizations.Resources", typeof(LocalizationManager).Assembly);
 
         private CultureInfo _currentCulture;
 

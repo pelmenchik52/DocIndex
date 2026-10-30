@@ -1,5 +1,5 @@
-﻿using KURSOVA.Commands;
-using KURSOVA.Model.Interfaces;
+﻿using DocIndex.Commands;
+using DocIndex.Model.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
@@ -8,11 +8,11 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using System;
-using KURSOVA.Model;
-using KURSOVA.Properties.Localizations;
-using KURSOVA.Services; 
+using DocIndex.Model;
+using DocIndex.Properties.Localizations;
+using DocIndex.Services; 
 
-namespace KURSOVA.ViewModel
+namespace DocIndex.ViewModel
 {
     // ViewModel для відображення ключових слів, їхніх оцінок (TF-IDF) та статистики корпусу.
     public class KeywordsViewModel : ViewModelBase

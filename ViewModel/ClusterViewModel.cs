@@ -1,5 +1,5 @@
-﻿using KURSOVA.Model;
-using KURSOVA.ViewModel;
+﻿using DocIndex.Model;
+using DocIndex.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel; 
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.ViewModel
+namespace DocIndex.ViewModel
 {
     // Клас ViewModel, який представляє один кластер для відображення у View.
     public class ClusterViewModel

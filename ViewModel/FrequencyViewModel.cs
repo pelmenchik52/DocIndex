@@ -1,7 +1,7 @@
-﻿using KURSOVA.Commands;
-using KURSOVA.Model;
-using KURSOVA.Model.Interfaces;
-using KURSOVA.Services;
+﻿using DocIndex.Commands;
+using DocIndex.Model;
+using DocIndex.Model.Interfaces;
+using DocIndex.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,7 +15,7 @@ using System.Windows.Data;
 using Microsoft.Win32;
 using System.Windows.Input;
 
-namespace KURSOVA.ViewModel
+namespace DocIndex.ViewModel
 {
     // ViewModel для відображення, фільтрації та експорту глобального словника частот.
     public class FrequencyViewModel : ViewModelBase

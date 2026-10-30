@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
-using KURSOVA.Model;
+using DocIndex.Model;
 
-namespace KURSOVA.Converters
+namespace DocIndex.Converters
 {
     public class EnumToBooleanConverter : IValueConverter
     {

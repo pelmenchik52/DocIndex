@@ -274,7 +274,7 @@
     <value>Імпорт, аналіз, пошук схожих документів та візуалізація кластерів</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
-    <value>Docergänger</value>
+    <value>DocIndex</value>
   </data>
   <data name="Stats_TotalWords" xml:space="preserve">
     <value>Всього слів</value>

@@ -1,6 +1,6 @@
-﻿using KURSOVA.Commands;
-using KURSOVA.Model;
-using KURSOVA.View;
+﻿using DocIndex.Commands;
+using DocIndex.Model;
+using DocIndex.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
-using KURSOVA.Services;
+using DocIndex.Services;
 
-namespace KURSOVA.ViewModel
+namespace DocIndex.ViewModel
 {
     // ViewModel для керування списком документів (View: DocumentsView).
     public class DocumentsViewModel : ViewModelBase
@@ -168,7 +168,7 @@ namespace KURSOVA.ViewModel
 
                 try
                 {
-                    // Асинхронна фонова операція: створюємо об'єкти Document (завантаження I/O).
+                    // Асинхронна фонова операція: створюємо об'єкти Document.
                     var docsToAdd = await Task.Run(() =>
                     {
                         var docs = new List<IDocument>();

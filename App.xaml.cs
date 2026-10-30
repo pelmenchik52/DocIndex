@@ -1,12 +1,12 @@
-﻿using KURSOVA.Model;
-using KURSOVA.ViewModel;
+﻿using DocIndex.Model;
+using DocIndex.ViewModel;
 using System.Windows;
 using System.Linq;
-using KURSOVA.Services; 
+using DocIndex.Services; 
 using System.Globalization;
-using KURSOVA.Localization;
+using DocIndex.Localization;
 
-namespace KURSOVA
+namespace DocIndex
 {
     // Точка входу, відповідає за ініціалізацію інтерфейсу, створення сервісів
     // та застосування початкових налаштувань.

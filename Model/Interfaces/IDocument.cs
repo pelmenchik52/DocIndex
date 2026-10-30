@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Інтерфейс IDocument: Визначає контракт для основного об'єкта даних (Model).
     // Він представляє документ у корпусі з його метаданими та вмістом.

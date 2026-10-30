@@ -1,11 +1,11 @@
-﻿using KURSOVA.Model.Interfaces;
+﻿using DocIndex.Model.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Інтерфейс IAnalyzer: Визначає контракт для класів, що виконують
     // аналіз корпусу (бізнес-логіку), наприклад, обчислення TF-IDF, 

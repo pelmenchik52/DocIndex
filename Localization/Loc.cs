@@ -1,11 +1,11 @@
-﻿using KURSOVA.Properties.Localizations;
+﻿using DocIndex.Properties.Localizations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Localization
+namespace DocIndex.Localization
 {
     // Статичний допоміжний клас для централізованого отримання локалізованих рядків
     public static class Loc

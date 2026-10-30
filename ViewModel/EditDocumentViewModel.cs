@@ -1,13 +1,13 @@
-﻿using KURSOVA.Commands;
-using KURSOVA.Model;
-using KURSOVA.Model.Interfaces;
-using KURSOVA.Services;
+﻿using DocIndex.Commands;
+using DocIndex.Model;
+using DocIndex.Model.Interfaces;
+using DocIndex.Services;
 using System;
 using System.ComponentModel;
 using System.IO; 
 using System.Windows.Input;
 
-namespace KURSOVA.ViewModel
+namespace DocIndex.ViewModel
 {
     // ViewModel для модального вікна редагування документа.
     public class EditDocumentViewModel : ViewModelBase

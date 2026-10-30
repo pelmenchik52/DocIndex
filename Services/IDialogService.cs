@@ -1,13 +1,13 @@
-﻿using KURSOVA.Model;
-using KURSOVA.Model.Interfaces;
-using KURSOVA.ViewModel;
+﻿using DocIndex.Model;
+using DocIndex.Model.Interfaces;
+using DocIndex.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Services
+namespace DocIndex.Services
 {
     // Контракт для служби, яка керує всіма взаємодіями з UI, 
     // ізолюючи ViewModel від залежностей System.Windows.

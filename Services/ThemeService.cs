@@ -1,10 +1,10 @@
-﻿using KURSOVA.Model; // Для Theme
-using KURSOVA.Services; // Для IThemeService
+﻿using DocIndex.Model; // Для Theme
+using DocIndex.Services; // Для IThemeService
 using System;
 using System.Linq;
 using System.Windows; // Для Application, ResourceDictionary, Uri
 
-namespace KURSOVA.Services
+namespace DocIndex.Services
 {
     // ThemeService: Конкретна реалізація служби зміни теми.
     // Тут міститься логіка, яка взаємодіє з ResourceDictionary WPF.

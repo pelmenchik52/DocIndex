@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KURSOVA.Model
+namespace DocIndex.Model
 {
     // Клас FrequencyItem: Об'єкт даних (Model), що представляє слово та його частоту.
     // Використовується для зберігання результатів підрахунку слів.
