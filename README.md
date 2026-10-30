@@ -63,7 +63,7 @@ A Windows desktop application for **indexing text documents, clustering them, fi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/DocIndex.git
+   git clone https://github.com/pelmenchik52/DocIndex.git
    cd DocIndex
    ```
 2. Open `DocIndex.sln` in Visual Studio.
@@ -202,9 +202,9 @@ DocIndex/
 
 ## Author
 
-**<Your name>**: 3rd-year Software Engineering student, Lviv Polytechnic National University.
+**Vladyslav Andreiev**: 3rd-year Software Engineering student, Lviv Polytechnic National University.
 
 - GitHub: [@pelmenchik52](https://github.com/pelmenchik52)
-- Email: <your-email>
+- Email: vladzo16092006@gmail.com
 
 <!-- Add a license if you want others to reuse the code, e.g. MIT, and mention it here. -->
